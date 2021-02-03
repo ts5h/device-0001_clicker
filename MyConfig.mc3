@@ -1,12 +1,16 @@
 <config configVersion="1.1" device="PIC16F1705" coreVersion="5.0.2">
    <usedClasses class="java.util.HashMap">
       <entry>
+         <string>System Module</string>
+         <string>class com.microchip.mcc.mcu8.systemManager.SystemManager</string>
+      </entry>
+      <entry>
          <string>ADC</string>
          <string>class com.microchip.mcc.mcu8.modules.adc.ADC</string>
       </entry>
       <entry>
-         <string>System Module</string>
-         <string>class com.microchip.mcc.mcu8.systemManager.SystemManager</string>
+         <string>EUSART</string>
+         <string>class com.microchip.mcc.mcu8.modules.eusart.EUSART</string>
       </entry>
       <entry>
          <string>INTERNAL OSCILLATOR</string>
@@ -42,6 +46,10 @@
    </usedLibraries>
    <tokenMap class="java.util.HashMap">
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="TX9D"/>
+         <value>0</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCSTAT" settingAlias="SOSCR" alias="enabled"/>
          <value>1</value>
       </entry>
@@ -55,7 +63,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="TRISC"/>
-         <value>0</value>
+         <value>32</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="TXI" settingAlias="order"/>
+         <value>-1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="WDT" registerAlias="WDTCON0" settingAlias="WDTPS" alias="1:128"/>
@@ -82,6 +94,10 @@
          <value>16</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="TXEN"/>
+         <value>enabled</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC" registerAlias="ADCON2" settingAlias="TRIGSEL" alias="CLC1"/>
          <value>8</value>
       </entry>
@@ -104,6 +120,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="INLVLC" settingAlias="INLVLC3" alias="TTL_input"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART" registerAlias="TXSTA"/>
+         <value>36</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="RC3PPS" settingAlias="RC3PPS"/>
@@ -162,6 +182,14 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="FERR" alias="no_error"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="SPBRGH" settingAlias="SPBRGH"/>
+         <value>0</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="iocUserSet RC5"/>
          <value>disabled</value>
       </entry>
@@ -171,6 +199,10 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="iocUserSet RC3"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="ADDEN"/>
          <value>disabled</value>
       </entry>
       <entry>
@@ -294,8 +326,20 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="RX9D"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="SWRXBufferSize"/>
+         <value>8</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="ODCONA"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="SPEN" alias="enabled"/>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="INLVLC" settingAlias="INLVLC2" alias="TTL_input"/>
@@ -312,6 +356,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="iocUserSet RC0"/>
          <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="ABDEN" alias="disabled"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="CCP1" name="captureAssignedTimerDisplay"/>
@@ -334,12 +382,20 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="SPEN" alias="disabled"/>
+         <value>0</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCCP" settingAlias="IOCCP1" alias="disabled"/>
          <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="inputMode"/>
          <value>periodMode</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="SENDB" alias="send_sync_break_next"/>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG1" settingAlias="FOSC" alias="HS"/>
@@ -426,8 +482,16 @@
          <value>2</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="TXI" settingAlias="flag"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC" registerAlias="ADCON0" settingAlias="CHS" alias="AN1"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="BRG16"/>
+         <value>16bit_generator</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCAP" settingAlias="IOCAP5"/>
@@ -446,6 +510,10 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="SYNC" alias="synchronous"/>
+         <value>1</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="SLRCONC" settingAlias="SLRC4" alias="limited"/>
          <value>1</value>
       </entry>
@@ -459,6 +527,10 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="RA1PPS" settingAlias="RA1PPS"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="SREN" alias="disabled"/>
          <value>0</value>
       </entry>
       <entry>
@@ -515,7 +587,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISC" settingAlias="TRISC5"/>
-         <value>output</value>
+         <value>input</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="WPUA" settingAlias="WPUA1" alias="set"/>
@@ -542,8 +614,16 @@
          <value>1</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="OERR" alias="error"/>
+         <value>1</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="INLVLA" settingAlias="INLVLA3" alias="TTL_input"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="RCIDL" alias="idle"/>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="CCP1" name="clockFreq"/>
@@ -627,6 +707,10 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="INLVLC" settingAlias="INLVLC0" alias="TTL_input"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART" registerAlias="TXREG"/>
          <value>0</value>
       </entry>
       <entry>
@@ -730,6 +814,10 @@
          <value>OFF</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="SPBRGL" settingAlias="SPBRGL"/>
+         <value>207</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCSTAT" settingAlias="LFIOFR" alias="disabled"/>
          <value>0</value>
       </entry>
@@ -758,8 +846,16 @@
          <value>1</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="SYNC"/>
+         <value>asynchronous</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="IOCAN"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="BRGH" alias="hi_speed"/>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISC" settingAlias="TRISC1"/>
@@ -798,7 +894,19 @@
          <value>BOR Circuit is inactive</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="baudRateComboBox"/>
+         <value>9600</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="EUSART_TXIISRFunction"/>
+         <value>TxDefaultInterruptHandler</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="WPUA" settingAlias="WPUA2" alias="set"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="CSRC" alias="master"/>
          <value>1</value>
       </entry>
       <entry>
@@ -846,6 +954,10 @@
          <value>disabled</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="SREN" alias="enabled"/>
+         <value>1</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCCP" settingAlias="IOCCP4" alias="disabled"/>
          <value>0</value>
       </entry>
@@ -858,11 +970,11 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC" registerAlias="ADCON2" settingAlias="TRIGSEL" alias="no_auto_trigger"/>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR2" registerAlias="TMR"/>
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR2" registerAlias="TMR"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC" registerAlias="ADCON2" settingAlias="TRIGSEL" alias="no_auto_trigger"/>
          <value>0</value>
       </entry>
       <entry>
@@ -902,8 +1014,16 @@
          <value>7</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="OERR"/>
+         <value>no_error</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCSTAT" settingAlias="SOSCR"/>
          <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="TX9"/>
+         <value>8-bit</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="RC1PPS"/>
@@ -954,12 +1074,28 @@
          <value>1</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="SCKP" alias="Non-Inverted"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="CSRC"/>
+         <value>slave</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR2" registerAlias="TCON"/>
          <value>124</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="TXEN" alias="enabled"/>
+         <value>1</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCAP" settingAlias="IOCAP2" alias="disabled"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="EUSART_RCIISRFunction"/>
+         <value>RxDefaultInterruptHandler</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR2" registerAlias="TCON" settingAlias="TOUTPS" alias="1:5"/>
@@ -1014,6 +1150,10 @@
          <value>9</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="SPEN"/>
+         <value>enabled</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG1" settingAlias="FCMEN" alias="ON"/>
          <value>8192</value>
       </entry>
@@ -1030,6 +1170,10 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="baudprocessmode"/>
+         <value>easysetup</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCSTAT" settingAlias="HFIOFR" alias="disabled"/>
          <value>0</value>
       </entry>
@@ -1044,6 +1188,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC" registerAlias="ADCON1" settingAlias="ADCS" alias="FOSC/4"/>
          <value>4</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART" registerAlias="RCREG"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC" registerAlias="ADCON1" settingAlias="ADCS" alias="FOSC/2"/>
@@ -1090,12 +1238,12 @@
          <value>Falling edge</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC" registerAlias="ADCON1" settingAlias="ADFM" alias="right"/>
-         <value>1</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR2" registerAlias="TMRI" settingAlias="order"/>
          <value>-1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC" registerAlias="ADCON1" settingAlias="ADFM" alias="right"/>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCCF" settingAlias="IOCCF0" alias="disabled"/>
@@ -1134,6 +1282,10 @@
          <value>1</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="TXEN" alias="disabled"/>
+         <value>0</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCSTAT" settingAlias="LFIOFR"/>
          <value>disabled</value>
       </entry>
@@ -1152,6 +1304,14 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="SLRCONC" settingAlias="SLRC1"/>
          <value>limited</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="RCI" settingAlias="flag"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="SENDB"/>
+         <value>sync_break_complete</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="CCP1" registerAlias="CCPRH" settingAlias="CCPRH"/>
@@ -1222,6 +1382,10 @@
          <value/>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="OERR" alias="no_error"/>
+         <value>0</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="BORCON" settingAlias="BORFS" alias="enabled"/>
          <value>1</value>
       </entry>
@@ -1266,6 +1430,10 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="TRMT"/>
+         <value>TSR_empty</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCAP" settingAlias="IOCAP4" alias="disabled"/>
          <value>0</value>
       </entry>
@@ -1302,12 +1470,12 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ADC" registerAlias="ADCON0" settingAlias="CHS"/>
-         <value>AN0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR2" registerAlias="TCON" settingAlias="TOUTPS"/>
          <value>1:16</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ADC" registerAlias="ADCON0" settingAlias="CHS"/>
+         <value>AN0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="WPUC"/>
@@ -1360,6 +1528,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RA0"/>
          <value>Cds_IN</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="ABDOVF" alias="no_overflow"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="CCP1" name="pwmCCPRDisplayValue"/>
@@ -1462,6 +1634,10 @@
          <value>PWM1timer2</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="RX9"/>
+         <value>8-bit</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCCF" settingAlias="IOCCF1" alias="enabled"/>
          <value>1</value>
       </entry>
@@ -1490,6 +1666,10 @@
          <value>1:65536</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="TXI" settingAlias="enable"/>
+         <value>enabled</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="CCP1" registerAlias="CCPI" settingAlias="flag"/>
          <value>disabled</value>
       </entry>
@@ -1504,6 +1684,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="WDT" registerAlias="WDTCON0"/>
          <value>22</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="BRG16" alias="8bit_generator"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="LATC"/>
@@ -1574,6 +1758,10 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="SYNC" alias="asynchronous"/>
+         <value>0</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCAN" settingAlias="IOCAN0"/>
          <value>disabled</value>
       </entry>
@@ -1618,6 +1806,10 @@
          <value>5</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="FERR"/>
+         <value>no_error</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCSTAT" settingAlias="HFIOFR" alias="enabled"/>
          <value>1</value>
       </entry>
@@ -1658,6 +1850,10 @@
          <value>2</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="TX9" alias="9-bit"/>
+         <value>1</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG2" settingAlias="PLLEN"/>
          <value>OFF</value>
       </entry>
@@ -1688,6 +1884,14 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCCF" settingAlias="IOCCF2" alias="disabled"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="TRMT" alias="TSR_empty"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="SCKP" alias="Inverted"/>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR2" registerAlias="TMRI" settingAlias="enable"/>
@@ -1746,12 +1950,20 @@
          <value>digital</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="RCREG" settingAlias="RCREG"/>
+         <value>0</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCCP" settingAlias="IOCCP0"/>
          <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="WDT" registerAlias="WDTCON0" settingAlias="WDTPS" alias="1:256"/>
          <value>3</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="RCIDL"/>
+         <value>idle</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="WPUC" settingAlias="WPUC2"/>
@@ -1798,12 +2010,24 @@
          <value>249</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="TX9" alias="8-bit"/>
+         <value>0</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCCON" settingAlias="IRCF" alias="31.25KHz_MF"/>
          <value>2</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="CREN"/>
+         <value>enabled</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCCN" settingAlias="IOCCN5"/>
          <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="templateNameValue"/>
+         <value>eusart_interrupt</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ANSELA" settingAlias="ANSA0" alias="digital"/>
@@ -1856,6 +2080,14 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG1" settingAlias="MCLRE"/>
          <value>ON</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="DT%Bidirectional"/>
+         <value>RC5</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="CREN" alias="enabled"/>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR2" registerAlias="TCON" settingAlias="TCKPS" alias="1:64"/>
@@ -1978,6 +2210,14 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="ABDOVF" alias="overflow"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="SENDB" alias="sync_break_complete"/>
+         <value>0</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="T0CKIPPS"/>
          <value>2</value>
       </entry>
@@ -1988,6 +2228,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC" registerAlias="ADCON1" settingAlias="ADPREF" alias="VDD"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="ABDOVF"/>
+         <value>no_overflow</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="PrechargeCount"/>
@@ -2050,6 +2294,10 @@
          <value>13</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="BRGH"/>
+         <value>hi_speed</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="WPUA" settingAlias="WPUA0" alias="clear"/>
          <value>0</value>
       </entry>
@@ -2074,6 +2322,10 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="CK%Bidirectional"/>
+         <value>RC4</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="ODCONC" settingAlias="ODC5"/>
          <value>disabled</value>
       </entry>
@@ -2082,8 +2334,16 @@
          <value>3</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="BRG16" alias="16bit_generator"/>
+         <value>1</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="CCP1PPS" settingAlias="CCP1PPS"/>
          <value>21</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="systemClockValue"/>
+         <value>8000000</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RC3"/>
@@ -2106,8 +2366,16 @@
          <value>digital</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="RCIDL" alias="bit_received"/>
+         <value>0</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="INTERNAL OSCILLATOR" registerAlias="BORCON" settingAlias="SBOREN"/>
          <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART" registerAlias="RCSTA"/>
+         <value>144</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="T1GPPS"/>
@@ -2174,6 +2442,10 @@
          <value>enabled</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="TRMT" alias="TSR_full"/>
+         <value>0</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="CCP1" registerAlias="CCPCON" settingAlias="CCPM"/>
          <value>PWM</value>
       </entry>
@@ -2215,7 +2487,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="RC4PPS"/>
-         <value>0</value>
+         <value>20</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="INLVLA" settingAlias="INLVLA0"/>
@@ -2240,6 +2512,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="tadValue"/>
          <value>1.0 us</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="SWTXBufferSize"/>
+         <value>8</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCAF" settingAlias="IOCAF2" alias="enabled"/>
@@ -2271,6 +2547,10 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ANSELC" settingAlias="ANSC0" alias="digital"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="CREN" alias="disabled"/>
          <value>0</value>
       </entry>
       <entry>
@@ -2310,6 +2590,10 @@
          <value>disabled</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="SCKP"/>
+         <value>Non-Inverted</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="CCP1" registerAlias="CCPCON" settingAlias="CCPM" alias="Falling edge"/>
          <value>4</value>
       </entry>
@@ -2332,6 +2616,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG1" settingAlias="CP"/>
          <value>OFF</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="CK%isActiveBidirectional"/>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="CLCIN1PPS"/>
@@ -2367,6 +2655,10 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ADC" registerAlias="ADRESH" settingAlias="ADRESH"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="BRGH" alias="lo_speed"/>
          <value>0</value>
       </entry>
       <entry>
@@ -2474,8 +2766,16 @@
          <value>ON</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="baudRateErrorLabel"/>
+         <value>Error: 0.160 %</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ODCONC" settingAlias="ODC4" alias="enabled"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RXPPS%aux0"/>
+         <value>21</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="COGINPPS"/>
@@ -2594,6 +2894,10 @@
          <value>disabled</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="DT%isActiveBidirectional"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISA" settingAlias="TRISA1"/>
          <value>input</value>
       </entry>
@@ -2604,6 +2908,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="CCP1" name="PrescalerValue"/>
          <value>1:1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="RX9" alias="8-bit"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="INLVLA" settingAlias="INLVLA1" alias="ST_input"/>
@@ -2658,6 +2966,10 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="WUE" alias="disabled"/>
+         <value>0</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="WDT" registerAlias="WDTCON0" settingAlias="WDTPS" alias="1:64"/>
          <value>1</value>
       </entry>
@@ -2672,6 +2984,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ANSELA" settingAlias="ANSA0" alias="analog"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="RCI" settingAlias="order"/>
+         <value>-1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCCN" settingAlias="IOCCN0" alias="disabled"/>
@@ -2774,6 +3090,10 @@
          <value>1</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART" registerAlias="SPBRGH"/>
+         <value>0</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="WPUA" settingAlias="WPUA4" alias="clear"/>
          <value>0</value>
       </entry>
@@ -2839,7 +3159,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="RC5PPS"/>
-         <value>12</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="SSPCLKPPS" settingAlias="SSPCLKPPS"/>
@@ -2903,6 +3223,10 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="TRISA" settingAlias="TRISA4" alias="input"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="WUE" alias="enabled"/>
          <value>1</value>
       </entry>
       <entry>
@@ -2970,6 +3294,10 @@
          <value>1000.0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART" registerAlias="SPBRGL"/>
+         <value>207</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="WPUA" settingAlias="WPUA4" alias="set"/>
          <value>1</value>
       </entry>
@@ -3002,6 +3330,14 @@
          <value>1</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="SREN"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="WUE"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RC2"/>
          <value>output</value>
       </entry>
@@ -3015,7 +3351,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RC4"/>
-         <value>output</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG2" settingAlias="LVP"/>
@@ -3032,6 +3368,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="INLVLC" settingAlias="INLVLC1" alias="ST_input"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="ABDEN"/>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="RC1PPS" settingAlias="RC1PPS"/>
@@ -3083,6 +3423,10 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCAN" settingAlias="IOCAN0" alias="disabled"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="TXREG" settingAlias="TXREG"/>
          <value>0</value>
       </entry>
       <entry>
@@ -3150,6 +3494,10 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART" registerAlias="BAUDCON"/>
+         <value>8</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="INLVLC" settingAlias="INLVLC5" alias="TTL_input"/>
          <value>0</value>
       </entry>
@@ -3182,8 +3530,16 @@
          <value>disabled</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="ADDEN" alias="enabled"/>
+         <value>1</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RA4"/>
          <value>output</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="FERR" alias="error"/>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RA3"/>
@@ -3294,12 +3650,24 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="RX9" alias="9-bit"/>
+         <value>1</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCCN" settingAlias="IOCCN1" alias="disabled"/>
          <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="WPUC" settingAlias="WPUC5" alias="set"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="BAUDCON" settingAlias="ABDEN" alias="enabled"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="useStdio"/>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="RA1PPS"/>
@@ -3363,10 +3731,14 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="RC4PPS" settingAlias="RC4PPS"/>
-         <value>0</value>
+         <value>20</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="CCP1" name="ccpOutputPin"/>
+         <value>enabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART" name="eusartInterrupts"/>
          <value>enabled</value>
       </entry>
       <entry>
@@ -3404,6 +3776,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="customNameUserSet RA5"/>
          <value>enabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="ADDEN" alias="disabled"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCI" settingAlias="enable"/>
@@ -3467,7 +3843,15 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="RC5PPS" settingAlias="RC5PPS"/>
-         <value>12</value>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="RCI" settingAlias="enable"/>
+         <value>enabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART" registerAlias="TXSTA" settingAlias="CSRC" alias="slave"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="trisUserSetRA0"/>
@@ -3528,8 +3912,12 @@
    </tokenMap>
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
+         <file>mcc_generated_files\interrupt_manager.h</file>
+         <hash>2a0eb695653fb1ba64e298a020f01c663faae2ff8628f5a4121c08fa45be5345</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>2ee164379aaaae2966ec152855c44dfbc0af6536c2ddf4702f141f43047c7cf4</hash>
+         <hash>c06fb0e4bc281c0c2eda166c0f54e3fca1e830b237b21a43bf7be6de51e4e3fb</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\device_config.h</file>
@@ -3540,12 +3928,12 @@
          <hash>9c0bb6d07f9b1c3fdecfe3ff8aa2c724a770ed837d0741216dedc672cc3e7b08</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\tmr2.h</file>
-         <hash>f8044dd5e12a7ea1321743d720b5b006159e90426435a384bb9e5a76eb866864</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\device_config.c</file>
          <hash>54d953b8614606e324c7e1bd8dc1785c60791151df958fb4bf2f18f5cdf8ca06</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\tmr2.h</file>
+         <hash>f8044dd5e12a7ea1321743d720b5b006159e90426435a384bb9e5a76eb866864</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\tmr2.c</file>
@@ -3560,8 +3948,16 @@
          <hash>dcb1c499a54f27ead8570262a3bf97f212a8dc5b061e0bd3b7b31f767297d8b8</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files\eusart.c</file>
+         <hash>ddf6240f6fa418fc1143527b70006ef7dfc916f80d0bad9e4e60d8b51c1b1917</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\pin_manager.c</file>
-         <hash>b4893038e5de8f0024c09b6de4b31b2a97e954a137aa4cd5e949b7ccee490a9c</hash>
+         <hash>fd93b57e7fd7e7d2d60c4edafc0011ff1abb22c25f6650612c18e91776e7ab19</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\eusart.h</file>
+         <hash>04c4f503fd33b05ac62c509f0a7bb40248d608d6515f26f2d1cb5fe10e6327a8</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pwm1.c</file>
@@ -3576,8 +3972,12 @@
          <hash>260510e8a5e00d3b9af2f37a6f66f69df39a73908cc567c4e044f3cbc03e5e30</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files\interrupt_manager.c</file>
+         <hash>51222b7299c4960fa5ef3f3ccdbd6668e6efee0bb525f1910b146bc6ce135ea9</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\mcc.c</file>
-         <hash>93e8d7382e71655497a11b8e316b31f23831ca149624c5755b3d7679db408bc2</hash>
+         <hash>2d5cdba7554576386061eae14fbdaf08dbbd97d40598df429ea36f74273a6db2</hash>
       </entry>
    </generatedFileHashHistoryMap>
    <mc3libFileHashHistoryMap class="java.util.HashMap"/>

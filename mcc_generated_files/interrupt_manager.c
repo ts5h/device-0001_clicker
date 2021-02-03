@@ -1,24 +1,26 @@
 /**
-  @Generated PIC10 / PIC12 / PIC16 / PIC18 MCUs Source File
+  Generated Interrupt Manager Source File
 
   @Company:
     Microchip Technology Inc.
 
   @File Name:
-    mcc.c
+    interrupt_manager.c
 
   @Summary:
-    This is the mcc.c file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+    This is the Interrupt Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
   @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
+    This header file provides implementations for global interrupt handling.
+    For individual peripheral handlers please see the peripheral driver for
+    all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.7
         Device            :  PIC16F1705
-        Driver Version    :  2.00
+        Driver Version    :  2.04
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.31 and above or later
-        MPLAB             :  MPLAB X 5.45
+        MPLAB 	          :  MPLAB X 5.45
 */
 
 /*
@@ -44,39 +46,32 @@
     SOFTWARE.
 */
 
+#include "interrupt_manager.h"
 #include "mcc.h"
 
-
-void SYSTEM_Initialize(void)
+void __interrupt() INTERRUPT_InterruptManager (void)
 {
-
-    PIN_MANAGER_Initialize();
-    OSCILLATOR_Initialize();
-    WDT_Initialize();
-    PWM1_Initialize();
-    ADC_Initialize();
-    TMR2_Initialize();
-    EUSART_Initialize();
+    // interrupt handler
+    if(INTCONbits.PEIE == 1)
+    {
+        if(PIE1bits.TXIE == 1 && PIR1bits.TXIF == 1)
+        {
+            EUSART_TxDefaultInterruptHandler();
+        } 
+        else if(PIE1bits.RCIE == 1 && PIR1bits.RCIF == 1)
+        {
+            EUSART_RxDefaultInterruptHandler();
+        } 
+        else
+        {
+            //Unhandled Interrupt
+        }
+    }      
+    else
+    {
+        //Unhandled Interrupt
+    }
 }
-
-void OSCILLATOR_Initialize(void)
-{
-    // SCS FOSC; SPLLEN disabled; IRCF 8MHz_HF; 
-    OSCCON = 0x70;
-    // SOSCR disabled; 
-    OSCSTAT = 0x00;
-    // TUN 0; 
-    OSCTUNE = 0x00;
-    // SBOREN disabled; BORFS disabled; 
-    BORCON = 0x00;
-}
-
-void WDT_Initialize(void)
-{
-    // WDTPS 1:65536; SWDTEN OFF; 
-    WDTCON = 0x16;
-}
-
 /**
  End of File
 */

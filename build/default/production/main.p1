@@ -1,8 +1,32 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"72 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 72: void SYSTEM_Initialize(void);
+"3510 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1705.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1705.h: 3510:     struct {
+[s S193 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S193 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"3509
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1705.h: 3509: typedef union {
+[u S192 `S193 1 ]
+[n S192 . . ]
+"3521
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1705.h: 3521: extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0x19E)));
+[v _TXSTAbits `VS192 ~T0 @X0 0 e@414 ]
+"3330
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1705.h: 3330:     struct {
+[s S187 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S187 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"3329
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1705.h: 3329: typedef union {
+[u S186 `S187 1 ]
+[n S186 . . ]
+"3341
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1705.h: 3341: extern volatile RCSTAbits_t RCSTAbits __attribute__((address(0x19D)));
+[v _RCSTAbits `VS186 ~T0 @X0 0 e@413 ]
+"73 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 73: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"111 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1705.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1705.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -706,30 +730,41 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1705.h: 11826: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"49 main.c
-[; ;main.c: 49: void main(void)
+"50 main.c
+[; ;main.c: 50: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"50
-[; ;main.c: 50: {
+"51
+[; ;main.c: 51: {
 {
 [e :U _main ]
 [f ]
 "52
-[; ;main.c: 52:     SYSTEM_Initialize();
+[; ;main.c: 52:     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"53
+[; ;main.c: 53:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"56
+[; ;main.c: 56:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"69
-[; ;main.c: 69:     while (1)
-[e :U 594 ]
-"70
-[; ;main.c: 70:     {
+"74
+[; ;main.c: 74:     printf("Hello World!\n");
+[e ( _printf :s 1C ]
+"76
+[; ;main.c: 76:     while (1)
+[e :U 598 ]
+"77
+[; ;main.c: 77:     {
 {
-"72
-[; ;main.c: 72:     }
+"79
+[; ;main.c: 79:     }
 }
-[e :U 593 ]
-[e $U 594  ]
-[e :U 595 ]
-"73
-[; ;main.c: 73: }
-[e :UE 592 ]
+[e :U 597 ]
+[e $U 598  ]
+[e :U 599 ]
+"80
+[; ;main.c: 80: }
+[e :UE 596 ]
 }
+[p f _printf 8388608 ]
+[a 1C 72 101 108 108 111 32 87 111 114 108 100 33 10 0 ]

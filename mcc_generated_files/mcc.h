@@ -52,9 +52,11 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <conio.h>
+#include "interrupt_manager.h"
 #include "pwm1.h"
 #include "tmr2.h"
 #include "adc.h"
+#include "eusart.h"
 
 
 

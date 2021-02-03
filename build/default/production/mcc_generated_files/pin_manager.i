@@ -7016,7 +7016,7 @@ void PIN_MANAGER_Initialize(void)
 
 
     TRISA = 0x03;
-    TRISC = 0x00;
+    TRISC = 0x20;
 
 
 
@@ -7049,7 +7049,8 @@ void PIN_MANAGER_Initialize(void)
     INLVLA = 0x3F;
     INLVLC = 0x3F;
 # 107 "mcc_generated_files/pin_manager.c"
-    RC5PPS = 0x0C;
+    RXPPS = 0x15;
+    RC4PPS = 0x14;
 }
 
 void PIN_MANAGER_IOC(void)
