@@ -1,5 +1,5 @@
 
-# 1 "mcc_generated_files/pwm1.c"
+# 1 "mcc_generated_files/interrupt_manager.c"
 
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -7031,6 +7031,12 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
+# 287 "mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+
+# 299
+void PIN_MANAGER_IOC(void);
+
 # 13 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdint.h"
 typedef signed char int8_t;
 
@@ -7120,37 +7126,245 @@ typedef uint16_t uintptr_t;
 # 15 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
+# 29 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 15 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
 # 97 "mcc_generated_files/pwm1.h"
 void PWM1_Initialize(void);
 
 # 124
 void PWM1_LoadDutyValue(uint16_t dutyValue);
 
-# 64 "mcc_generated_files/pwm1.c"
-void PWM1_Initialize(void)
+# 15 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 103 "mcc_generated_files/tmr2.h"
+void TMR2_Initialize(void);
+
+# 132
+void TMR2_StartTimer(void);
+
+# 164
+void TMR2_StopTimer(void);
+
+# 199
+uint8_t TMR2_ReadTimer(void);
+
+# 238
+void TMR2_WriteTimer(uint8_t timerVal);
+
+# 290
+void TMR2_LoadPeriodRegister(uint8_t periodVal);
+
+# 325
+bool TMR2_HasOverflowOccured(void);
+
+# 15 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 72 "mcc_generated_files/adc.h"
+typedef uint16_t adc_result_t;
+
+# 77
+typedef struct
+{
+adc_result_t adcResult1;
+adc_result_t adcResult2;
+} adc_sync_double_result_t;
+
+# 95
+typedef enum
+{
+O_RA0 = 0x0,
+Cds_IN = 0x2,
+channel_FVRBuffer2 = 0x1C,
+channel_Temp = 0x1D,
+channel_DAC = 0x1E,
+channel_FVRBuffer1 = 0x1F
+} adc_channel_t;
+
+# 138
+void ADC_Initialize(void);
+
+# 168
+void ADC_SelectChannel(adc_channel_t channel);
+
+# 195
+void ADC_StartConversion(void);
+
+# 227
+bool ADC_IsConversionDone(void);
+
+# 260
+adc_result_t ADC_GetConversionResult(void);
+
+# 290
+adc_result_t ADC_GetConversion(adc_channel_t channel);
+
+# 318
+void ADC_TemperatureAcquisitionDelay(void);
+
+# 15 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 4 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\__size_t.h"
+typedef unsigned size_t;
+
+# 7 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 88
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 76 "mcc_generated_files/eusart.h"
+typedef union {
+struct {
+unsigned perr : 1;
+unsigned ferr : 1;
+unsigned oerr : 1;
+unsigned reserved : 5;
+};
+uint8_t status;
+}eusart_status_t;
+
+# 89
+extern volatile uint8_t eusartTxBufferRemaining;
+extern volatile uint8_t eusartRxCount;
+
+# 95
+extern void (*EUSART_TxDefaultInterruptHandler)(void);
+extern void (*EUSART_RxDefaultInterruptHandler)(void);
+
+# 118
+void EUSART_Initialize(void);
+
+# 166
+bool EUSART_is_tx_ready(void);
+
+# 214
+bool EUSART_is_rx_ready(void);
+
+# 261
+bool EUSART_is_tx_done(void);
+
+# 309
+eusart_status_t EUSART_get_last_status(void);
+
+# 329
+uint8_t EUSART_Read(void);
+
+# 349
+void EUSART_Write(uint8_t txData);
+
+# 370
+void EUSART_Transmit_ISR(void);
+
+# 391
+void EUSART_Receive_ISR(void);
+
+# 412
+void EUSART_RxDataHandler(void);
+
+# 430
+void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
+
+# 448
+void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
+
+# 466
+void EUSART_SetErrorHandler(void (* interruptHandler)(void));
+
+# 486
+void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
+
+# 506
+void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
+
+# 74 "mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+
+# 87
+void OSCILLATOR_Initialize(void);
+
+# 99
+void WDT_Initialize(void);
+
+# 52 "mcc_generated_files/interrupt_manager.c"
+void __interrupt() INTERRUPT_InterruptManager (void)
 {
 
-
-
-CCP1CON = 0x1C;
-
-
-CCPR1L = 0x3E;
-
-
-CCPR1H = 0x00;
-
-
-CCPTMRSbits.C1TSEL = 0x0;
+if(INTCONbits.PEIE == 1)
+{
+if(PIE1bits.TXIE == 1 && PIR1bits.TXIF == 1)
+{
+EUSART_TxDefaultInterruptHandler();
+}
+else if(PIE1bits.RCIE == 1 && PIR1bits.RCIF == 1)
+{
+EUSART_RxDefaultInterruptHandler();
+}
+else
+{
 
 }
-
-void PWM1_LoadDutyValue(uint16_t dutyValue)
+}
+else
 {
 
-CCPR1L = ((dutyValue & 0x03FC)>>2);
-
-
-CCP1CON = ((uint8_t)(CCP1CON & 0xCF) | ((dutyValue & 0x0003)<<4));
+}
 }
 
