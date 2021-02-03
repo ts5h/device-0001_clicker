@@ -1,0 +1,217 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1705 ]
+[d frameptr 6 ]
+"88 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/adc.c
+[e E4139 . `uc
+Cds_IN 0
+channel_FVRBuffer2 28
+channel_Temp 29
+channel_DAC 30
+channel_FVRBuffer1 31
+]
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"49 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"67 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+"50 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"61
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"73
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"55 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"64 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/pwm1.c
+[v _PWM1_Initialize PWM1_Initialize `(v  1 e 1 0 ]
+"62 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+[s S121 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"550 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1705.h
+[s S130 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 CCPIF 1 0 :1:2 
+]
+[u S133 . 1 `S121 1 . 1 0 `S130 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES133  1 e 1 @17 ]
+"911
+[v _TMR2 TMR2 `VEuc  1 e 1 @26 ]
+"931
+[v _PR2 PR2 `VEuc  1 e 1 @27 ]
+"951
+[v _T2CON T2CON `VEuc  1 e 1 @28 ]
+[s S150 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 T2OUTPS 1 0 :4:3 
+]
+"972
+[s S154 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T2OUTPS0 1 0 :1:3 
+`uc 1 T2OUTPS1 1 0 :1:4 
+`uc 1 T2OUTPS2 1 0 :1:5 
+`uc 1 T2OUTPS3 1 0 :1:6 
+]
+[u S162 . 1 `S150 1 . 1 0 `S154 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES162  1 e 1 @28 ]
+"1022
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1067
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+[s S30 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1313
+[s S37 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S44 . 1 `S30 1 . 1 0 `S37 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES44  1 e 1 @149 ]
+"1430
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"1489
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"1547
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"1619
+[v _OSCSTAT OSCSTAT `VEuc  1 e 1 @154 ]
+"1688
+[v _ADRESL ADRESL `VEuc  1 e 1 @155 ]
+"1708
+[v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
+"1728
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
+[s S238 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :5:2 
+]
+"1753
+[s S242 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADGO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+]
+[s S250 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[u S253 . 1 `S238 1 . 1 0 `S242 1 . 1 0 `S250 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES253  1 e 1 @157 ]
+"1808
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
+"1861
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @159 ]
+"1909
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"1954
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+"2296
+[v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"2681
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"2726
+[v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
+"3812
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"3862
+[v _WPUC WPUC `VEuc  1 e 1 @526 ]
+"5310
+[v _ODCONA ODCONA `VEuc  1 e 1 @652 ]
+"5355
+[v _ODCONC ODCONC `VEuc  1 e 1 @654 ]
+"5412
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @657 ]
+"5432
+[v _CCPR1H CCPR1H `VEuc  1 e 1 @658 ]
+"5452
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @659 ]
+[s S80 . 1 `uc 1 C1TSEL 1 0 :2:0 
+`uc 1 C2TSEL 1 0 :2:2 
+`uc 1 P3TSEL 1 0 :2:4 
+`uc 1 P4TSEL 1 0 :2:6 
+]
+"5834
+[s S85 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+`uc 1 C1TSEL1 1 0 :1:1 
+`uc 1 C2TSEL0 1 0 :1:2 
+`uc 1 C2TSEL1 1 0 :1:3 
+`uc 1 P3TSEL0 1 0 :1:4 
+`uc 1 P3TSEL1 1 0 :1:5 
+`uc 1 P4TSEL0 1 0 :1:6 
+`uc 1 P4TSEL1 1 0 :1:7 
+]
+[u S94 . 1 `S80 1 . 1 0 `S85 1 . 1 0 ]
+[v _CCPTMRSbits CCPTMRSbits `VES94  1 e 1 @670 ]
+"5899
+[v _SLRCONA SLRCONA `VEuc  1 e 1 @780 ]
+"5944
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @782 ]
+"5994
+[v _INLVLA INLVLA `VEuc  1 e 1 @908 ]
+"6044
+[v _INLVLC INLVLC `VEuc  1 e 1 @910 ]
+"8468
+[v _RC5PPS RC5PPS `VEuc  1 e 1 @3749 ]
+"49 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"73
+} 0
+"50 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"59
+} 0
+"73
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"77
+} 0
+"62 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+{
+"77
+} 0
+"64 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/pwm1.c
+[v _PWM1_Initialize PWM1_Initialize `(v  1 e 1 0 ]
+{
+"80
+} 0
+"55 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"108
+} 0
+"61 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"71
+} 0
+"67 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+{
+"86
+} 0
