@@ -7360,10 +7360,13 @@ SYSTEM_Initialize();
 
 # 74
 printf("Hello World!\n");
+int num = 0;
 
 while (1)
 {
 
+printf("%d\n", num);
+num++;
 }
 }
 

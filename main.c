@@ -72,10 +72,13 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
     
     printf("Hello World!\n");
+    int num = 0;
 
     while (1)
     {
         // Add your application code
+        printf("%d\n", num);
+        num++;
     }
 }
 /**

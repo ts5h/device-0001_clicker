@@ -4833,23 +4833,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 74: printf("Hello World!\n");
 "74
 [e ( _printf :s 1C ]
-[; ;main.c: 76: while (1)
-"76
-[e :U 592 ]
-[; ;main.c: 77: {
+"75
+[v _num `i ~T0 @X0 1 a ]
+[; ;main.c: 75: int num = 0;
+[e = _num -> 0 `i ]
+[; ;main.c: 77: while (1)
 "77
+[e :U 592 ]
+[; ;main.c: 78: {
+"78
 {
-"79
+[; ;main.c: 80: printf("%d\n", num);
+"80
+[e ( _printf , (. :s 2C _num ]
+[; ;main.c: 81: num++;
+"81
+[e ++ _num -> 1 `i ]
+"82
 }
 [e :U 591 ]
-"76
+"77
 [e $U 592  ]
 [e :U 593 ]
-[; ;main.c: 79: }
-[; ;main.c: 80: }
-"80
+[; ;main.c: 82: }
+[; ;main.c: 83: }
+"83
 [e :UE 590 ]
 }
-[p f _printf 8388608 ]
+[p f _printf 8388736 ]
+[a 2C 37 100 10 0 ]
 [a 1C 72 101 108 108 111 32 87 111 114 108 100 33 10 0 ]
-
