@@ -3,11 +3,10 @@ Microchip MPLAB XC8 Compiler V2.31
 Linker command line:
 
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
-  -h+dist/default/production\Device-0001_Clicker.X.production.sym \
-  --cmf=dist/default/production\Device-0001_Clicker.X.production.cmf -z \
-  -Q16F1705 -oC:\Users\at4\AppData\Local\Temp\shsg.2 \
-  --defsym=__MPLAB_BUILD=1 \
-  -Mdist/default/production/Device-0001_Clicker.X.production.map -E1 \
+  -h+dist/default/debug\Device-0001_Clicker.X.debug.sym \
+  --cmf=dist/default/debug\Device-0001_Clicker.X.debug.cmf -z -Q16F1705 \
+  -oC:\Users\at4\AppData\Local\Temp\s7r4.2 --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/debug/Device-0001_Clicker.X.debug.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0203Eh-023EFh -pstack=STACK \
   -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
   -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 -ACOMMON=070h-07Fh \
@@ -31,8 +30,8 @@ Linker command line:
   -ASFR31=0F80h-0FEFh -ACONFIG=08007h-08008h -DCONFIG=2 \
   -AIDLOC=08000h-08003h -DIDLOC=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE \
-  -pcinit=CODE -pfunctab=ENTRY -k C:\Users\at4\AppData\Local\Temp\shsg.o \
-  dist/default/production\Device-0001_Clicker.X.production.o 
+  -pcinit=CODE -pfunctab=ENTRY -k C:\Users\at4\AppData\Local\Temp\s7r4.o \
+  dist/default/debug\Device-0001_Clicker.X.debug.o 
 
 Object code version is 3.11
 
@@ -41,11 +40,11 @@ Machine type is 16F1705
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\at4\AppData\Local\Temp\shsg.o
+C:\Users\at4\AppData\Local\Temp\s7r4.o
                 end_init                             2C       2C        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2        0       4
-dist/default/production\Device-0001_Clicker.X.production.o
+dist/default/debug\Device-0001_Clicker.X.debug.o
                 cinit                                2E       2E        D        8       0
                 intentry                              4        4       28        8       0
                 config                             8007     8007        2        0       4

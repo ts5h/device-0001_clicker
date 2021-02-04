@@ -94,7 +94,6 @@ typedef struct
 
 typedef enum
 {
-    O_RA0 =  0x0,
     Cds_IN =  0x2,
     channel_FVRBuffer2 =  0x1C,
     channel_Temp =  0x1D,

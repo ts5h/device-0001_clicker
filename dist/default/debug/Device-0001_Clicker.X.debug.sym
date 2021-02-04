@@ -430,8 +430,8 @@ text9 58C 623 CODE 58C 0
 stringtext3 624 62B STRCODE 624 0
 text7 62C 645 CODE 62C 0
 %locals
-dist/default/production\Device-0001_Clicker.X.production.o
-C:\Users\at4\AppData\Local\Temp\shsg.s
+dist/default/debug\Device-0001_Clicker.X.debug.o
+C:\Users\at4\AppData\Local\Temp\s7r4.s
 4086 2E 0 CODE 0
 4089 2E 0 CODE 0
 4143 2E 0 CODE 0
