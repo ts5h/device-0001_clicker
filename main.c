@@ -49,18 +49,18 @@
  */
 
 // Like Arduino map()
-int map(int target_num, int in_min, int in_max, int out_min, int out_max)
+int map(int targetNum, int inMin, int inMax, int outMin, int outMax)
 {
-    int input_diff = in_max - target_num;
-    int input_range = in_max - in_min;
-    int output_range = out_max - out_min;
+    int inDiff = inMax - targetNum;
+    int inRange = inMax - inMin;
+    int outputRange = outMax - outMin;
     
     // Rounding
     // http://www.motorwarp.com/koizumi/round_c.html
-    double percentage = (double)input_diff / (double)input_range;
-    int out_diff = (int)((double)output_range * percentage + 0.5);
+    double percentage = (double)inDiff / (double)inRange;
+    int outDiff = (int)((double)outputRange * percentage + 0.5);
  
-    return out_max - out_diff;
+    return outMax - outDiff;
 }
 
 void main(void)
@@ -93,7 +93,7 @@ void main(void)
     
     unsigned int delayMin = 50;
     unsigned int delayMax = 1000;
-    unsigned int delay;
+    unsigned int delay = 0;
 
     while (1)
     {
@@ -105,7 +105,7 @@ void main(void)
         delay = delayMax + delayMin - map(val, minLimit, maxLimit, delayMin, delayMax);
         printf("%d, %d\r\n", val, delay);
         
-        __delay_ms(50);
+        __delay_ms(delay);
     }
 }
 /**
