@@ -33,11 +33,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TMR2_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
 "951 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1705.h
 [v _T2CON `Vuc ~T0 @X0 0 e@28 ]
-"137 mcc_generated_files/adc.h
-[v _ADC_Initialize `(v ~T0 @X0 0 ef ]
-"194
-[v _ADC_StartConversion `(v ~T0 @X0 0 ef ]
-"957 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1705.h
+"957
 [s S56 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
 [n S56 . T2CKPS TMR2ON T2OUTPS ]
 "962
@@ -50,15 +46,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _T2CONbits `VS55 ~T0 @X0 0 e@28 ]
 "326 mcc_generated_files/tmr2.h
 [v _TMR2_CallBack `(v ~T0 @X0 0 ef ]
-"226 mcc_generated_files/adc.h
-[v _ADC_IsConversionDone `(uc ~T0 @X0 0 ef ]
-"163 mcc_generated_files/tmr2.c
-[c E4019 2 28 29 30 31 .. ]
-[n E4019 . Cds_IN channel_FVRBuffer2 channel_Temp channel_DAC channel_FVRBuffer1  ]
-"289 mcc_generated_files/adc.h
-[v _ADC_GetConversion `(ui ~T0 @X0 0 ef1`E4019 ]
-"195 C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 [; ;xc8\pic\include\xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8\pic\include\xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -4747,296 +4734,192 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr2.h: 343: void TMR2_SetInterruptHandler(void (* InterruptHandler)(void));
 [; ;tmr2.h: 361: extern void (*TMR2_InterruptHandler)(void);
 [; ;tmr2.h: 379: void TMR2_DefaultInterruptHandler(void);
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;adc.h: 72: typedef uint16_t adc_result_t;
-[; ;adc.h: 77: typedef struct
-[; ;adc.h: 78: {
-[; ;adc.h: 79: adc_result_t adcResult1;
-[; ;adc.h: 80: adc_result_t adcResult2;
-[; ;adc.h: 81: } adc_sync_double_result_t;
-[; ;adc.h: 95: typedef enum
-[; ;adc.h: 96: {
-[; ;adc.h: 97: Cds_IN = 0x2,
-[; ;adc.h: 98: channel_FVRBuffer2 = 0x1C,
-[; ;adc.h: 99: channel_Temp = 0x1D,
-[; ;adc.h: 100: channel_DAC = 0x1E,
-[; ;adc.h: 101: channel_FVRBuffer1 = 0x1F
-[; ;adc.h: 102: } adc_channel_t;
-[; ;adc.h: 137: void ADC_Initialize(void);
-[; ;adc.h: 167: void ADC_SelectChannel(adc_channel_t channel);
-[; ;adc.h: 194: void ADC_StartConversion(void);
-[; ;adc.h: 226: bool ADC_IsConversionDone(void);
-[; ;adc.h: 259: adc_result_t ADC_GetConversionResult(void);
-[; ;adc.h: 289: adc_result_t ADC_GetConversion(adc_channel_t channel);
-[; ;adc.h: 317: void ADC_TemperatureAcquisitionDelay(void);
-[; ;xc8\pic\include\__size_t.h: 4: typedef unsigned size_t;
-[; ;stdarg.h: 7: typedef void * va_list[1];
-[; ;stdarg.h: 10: extern void * __va_start(void);
-[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 43: struct __prbuf
-[; ;stdio.h: 44: {
-[; ;stdio.h: 45: char * ptr;
-[; ;stdio.h: 46: void (* func)(char);
-[; ;stdio.h: 47: };
-[; ;errno.h: 29: extern int errno;
-[; ;conio.h: 12: extern void init_uart(void);
-[; ;conio.h: 14: extern char getch(void);
-[; ;conio.h: 15: extern char getche(void);
-[; ;conio.h: 16: extern void putch(char);
-[; ;conio.h: 17: extern void ungetch(char);
-[; ;conio.h: 19: extern __bit kbhit(void);
-[; ;conio.h: 23: extern char * cgets(char *);
-[; ;conio.h: 24: extern void cputs(const char *);
-[; ;stdio.h: 88: extern int cprintf(char *, ...);
-[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 183: extern char * gets(char *);
-[; ;stdio.h: 184: extern int puts(const char *);
-[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 195: extern int printf(const char *, ...);
-"61 mcc_generated_files/tmr2.c
+"58 mcc_generated_files/tmr2.c
 [v _TMR2_InterruptHandler `*F4010 ~T0 @X0 1 e ]
-[; ;tmr2.c: 61: void (*TMR2_InterruptHandler)(void);
-"67
+[; ;tmr2.c: 58: void (*TMR2_InterruptHandler)(void);
+"64
 [v _TMR2_Initialize `(v ~T0 @X0 1 ef ]
-"68
+"65
 {
-[; ;tmr2.c: 67: void TMR2_Initialize(void)
-[; ;tmr2.c: 68: {
+[; ;tmr2.c: 64: void TMR2_Initialize(void)
+[; ;tmr2.c: 65: {
 [e :U _TMR2_Initialize ]
 [f ]
-[; ;tmr2.c: 72: PR2 = 0x03;
-"72
+[; ;tmr2.c: 69: PR2 = 0x03;
+"69
 [e = _PR2 -> -> 3 `i `uc ]
-[; ;tmr2.c: 75: TMR2 = 0x00;
-"75
+[; ;tmr2.c: 72: TMR2 = 0x00;
+"72
 [e = _TMR2 -> -> 0 `i `uc ]
-[; ;tmr2.c: 78: PIR1bits.TMR2IF = 0;
-"78
+[; ;tmr2.c: 75: PIR1bits.TMR2IF = 0;
+"75
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-[; ;tmr2.c: 81: PIE1bits.TMR2IE = 1;
-"81
+[; ;tmr2.c: 78: PIE1bits.TMR2IE = 1;
+"78
 [e = . . _PIE1bits 0 1 -> -> 1 `i `uc ]
-[; ;tmr2.c: 84: TMR2_SetInterruptHandler(TMR2_DefaultInterruptHandler);
-"84
+[; ;tmr2.c: 81: TMR2_SetInterruptHandler(TMR2_DefaultInterruptHandler);
+"81
 [e ( _TMR2_SetInterruptHandler (1 &U _TMR2_DefaultInterruptHandler ]
-[; ;tmr2.c: 87: T2CON = 0x1F;
-"87
+[; ;tmr2.c: 84: T2CON = 0x1F;
+"84
 [e = _T2CON -> -> 31 `i `uc ]
-[; ;tmr2.c: 89: ADC_Initialize();
-"89
-[e ( _ADC_Initialize ..  ]
-[; ;tmr2.c: 90: ADC_StartConversion();
-"90
-[e ( _ADC_StartConversion ..  ]
-[; ;tmr2.c: 91: }
-"91
-[e :UE 588 ]
+[; ;tmr2.c: 85: }
+"85
+[e :UE 586 ]
 }
-"93
+"87
 [v _TMR2_StartTimer `(v ~T0 @X0 1 ef ]
-"94
+"88
 {
-[; ;tmr2.c: 93: void TMR2_StartTimer(void)
-[; ;tmr2.c: 94: {
+[; ;tmr2.c: 87: void TMR2_StartTimer(void)
+[; ;tmr2.c: 88: {
 [e :U _TMR2_StartTimer ]
 [f ]
-[; ;tmr2.c: 96: T2CONbits.TMR2ON = 1;
-"96
+[; ;tmr2.c: 90: T2CONbits.TMR2ON = 1;
+"90
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-[; ;tmr2.c: 97: }
-"97
-[e :UE 589 ]
+[; ;tmr2.c: 91: }
+"91
+[e :UE 587 ]
 }
-"99
+"93
 [v _TMR2_StopTimer `(v ~T0 @X0 1 ef ]
-"100
+"94
 {
-[; ;tmr2.c: 99: void TMR2_StopTimer(void)
-[; ;tmr2.c: 100: {
+[; ;tmr2.c: 93: void TMR2_StopTimer(void)
+[; ;tmr2.c: 94: {
 [e :U _TMR2_StopTimer ]
 [f ]
-[; ;tmr2.c: 102: T2CONbits.TMR2ON = 0;
-"102
+[; ;tmr2.c: 96: T2CONbits.TMR2ON = 0;
+"96
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-[; ;tmr2.c: 103: }
-"103
-[e :UE 590 ]
+[; ;tmr2.c: 97: }
+"97
+[e :UE 588 ]
 }
-"105
+"99
 [v _TMR2_ReadTimer `(uc ~T0 @X0 1 ef ]
-"106
+"100
 {
-[; ;tmr2.c: 105: uint8_t TMR2_ReadTimer(void)
-[; ;tmr2.c: 106: {
+[; ;tmr2.c: 99: uint8_t TMR2_ReadTimer(void)
+[; ;tmr2.c: 100: {
 [e :U _TMR2_ReadTimer ]
 [f ]
-"107
+"101
 [v _readVal `uc ~T0 @X0 1 a ]
-[; ;tmr2.c: 107: uint8_t readVal;
-[; ;tmr2.c: 109: readVal = TMR2;
-"109
+[; ;tmr2.c: 101: uint8_t readVal;
+[; ;tmr2.c: 103: readVal = TMR2;
+"103
 [e = _readVal _TMR2 ]
-[; ;tmr2.c: 111: return readVal;
-"111
+[; ;tmr2.c: 105: return readVal;
+"105
 [e ) _readVal ]
-[e $UE 591  ]
+[e $UE 589  ]
+[; ;tmr2.c: 106: }
+"106
+[e :UE 589 ]
+}
+"108
+[v _TMR2_WriteTimer `(v ~T0 @X0 1 ef1`uc ]
+"109
+{
+[; ;tmr2.c: 108: void TMR2_WriteTimer(uint8_t timerVal)
+[; ;tmr2.c: 109: {
+[e :U _TMR2_WriteTimer ]
+"108
+[v _timerVal `uc ~T0 @X0 1 r1 ]
+"109
+[f ]
+[; ;tmr2.c: 111: TMR2 = timerVal;
+"111
+[e = _TMR2 _timerVal ]
 [; ;tmr2.c: 112: }
 "112
+[e :UE 590 ]
+}
+"114
+[v _TMR2_LoadPeriodRegister `(v ~T0 @X0 1 ef1`uc ]
+"115
+{
+[; ;tmr2.c: 114: void TMR2_LoadPeriodRegister(uint8_t periodVal)
+[; ;tmr2.c: 115: {
+[e :U _TMR2_LoadPeriodRegister ]
+"114
+[v _periodVal `uc ~T0 @X0 1 r1 ]
+"115
+[f ]
+[; ;tmr2.c: 116: PR2 = periodVal;
+"116
+[e = _PR2 _periodVal ]
+[; ;tmr2.c: 117: }
+"117
 [e :UE 591 ]
 }
-"114
-[v _TMR2_WriteTimer `(v ~T0 @X0 1 ef1`uc ]
-"115
-{
-[; ;tmr2.c: 114: void TMR2_WriteTimer(uint8_t timerVal)
-[; ;tmr2.c: 115: {
-[e :U _TMR2_WriteTimer ]
-"114
-[v _timerVal `uc ~T0 @X0 1 r1 ]
-"115
-[f ]
-[; ;tmr2.c: 117: TMR2 = timerVal;
-"117
-[e = _TMR2 _timerVal ]
-[; ;tmr2.c: 118: }
-"118
-[e :UE 592 ]
-}
-"120
-[v _TMR2_LoadPeriodRegister `(v ~T0 @X0 1 ef1`uc ]
-"121
-{
-[; ;tmr2.c: 120: void TMR2_LoadPeriodRegister(uint8_t periodVal)
-[; ;tmr2.c: 121: {
-[e :U _TMR2_LoadPeriodRegister ]
-"120
-[v _periodVal `uc ~T0 @X0 1 r1 ]
-"121
-[f ]
-[; ;tmr2.c: 122: PR2 = periodVal;
-"122
-[e = _PR2 _periodVal ]
-[; ;tmr2.c: 123: }
-"123
-[e :UE 593 ]
-}
-"125
+"119
 [v _TMR2_ISR `(v ~T0 @X0 1 ef ]
-"126
+"120
 {
-[; ;tmr2.c: 125: void TMR2_ISR(void)
-[; ;tmr2.c: 126: {
+[; ;tmr2.c: 119: void TMR2_ISR(void)
+[; ;tmr2.c: 120: {
 [e :U _TMR2_ISR ]
 [f ]
-[; ;tmr2.c: 129: PIR1bits.TMR2IF = 0;
-"129
+[; ;tmr2.c: 123: PIR1bits.TMR2IF = 0;
+"123
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-[; ;tmr2.c: 133: TMR2_CallBack();
-"133
+[; ;tmr2.c: 127: TMR2_CallBack();
+"127
 [e ( _TMR2_CallBack ..  ]
-[; ;tmr2.c: 134: }
-"134
-[e :UE 594 ]
+[; ;tmr2.c: 128: }
+"128
+[e :UE 592 ]
 }
-"136
+"130
 [v _TMR2_CallBack `(v ~T0 @X0 1 ef ]
-"137
+"131
 {
-[; ;tmr2.c: 136: void TMR2_CallBack(void)
-[; ;tmr2.c: 137: {
+[; ;tmr2.c: 130: void TMR2_CallBack(void)
+[; ;tmr2.c: 131: {
 [e :U _TMR2_CallBack ]
 [f ]
-[; ;tmr2.c: 140: if(TMR2_InterruptHandler)
-"140
-[e $ ! != _TMR2_InterruptHandler -> -> 0 `i `*F4010 596  ]
-[; ;tmr2.c: 141: {
-"141
+[; ;tmr2.c: 134: if(TMR2_InterruptHandler)
+"134
+[e $ ! != _TMR2_InterruptHandler -> -> 0 `i `*F4010 594  ]
+[; ;tmr2.c: 135: {
+"135
 {
-[; ;tmr2.c: 142: TMR2_InterruptHandler();
-"142
+[; ;tmr2.c: 136: TMR2_InterruptHandler();
+"136
 [e ( *U _TMR2_InterruptHandler ..  ]
-"143
+"137
 }
-[e :U 596 ]
-[; ;tmr2.c: 143: }
-[; ;tmr2.c: 144: }
-"144
-[e :UE 595 ]
+[e :U 594 ]
+[; ;tmr2.c: 137: }
+[; ;tmr2.c: 138: }
+"138
+[e :UE 593 ]
 }
-"146
+"140
 [v _TMR2_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F4007 ]
 {
-[; ;tmr2.c: 146: void TMR2_SetInterruptHandler(void (* InterruptHandler)(void)){
+[; ;tmr2.c: 140: void TMR2_SetInterruptHandler(void (* InterruptHandler)(void)){
 [e :U _TMR2_SetInterruptHandler ]
-[v F4115 `(v ~T0 @X0 0 tf ]
-[v _InterruptHandler `*F4115 ~T0 @X0 1 r1 ]
+[v F4027 `(v ~T0 @X0 0 tf ]
+[v _InterruptHandler `*F4027 ~T0 @X0 1 r1 ]
 [f ]
-[; ;tmr2.c: 147: TMR2_InterruptHandler = InterruptHandler;
-"147
+[; ;tmr2.c: 141: TMR2_InterruptHandler = InterruptHandler;
+"141
 [e = _TMR2_InterruptHandler _InterruptHandler ]
-[; ;tmr2.c: 148: }
-"148
-[e :UE 597 ]
+[; ;tmr2.c: 142: }
+"142
+[e :UE 595 ]
 }
-"151
-[v _cnt `ui ~T0 @X0 1 e ]
-[i _cnt
--> -> 0 `i `ui
-]
-[; ;tmr2.c: 151: unsigned int cnt = 0;
-"152
-[v _val `ui ~T0 @X0 1 e ]
-[i _val
--> -> 0 `i `ui
-]
-[; ;tmr2.c: 152: uint16_t val = 0;
-"155
+"144
 [v _TMR2_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
 {
-[; ;tmr2.c: 155: void TMR2_DefaultInterruptHandler(void){
+[; ;tmr2.c: 144: void TMR2_DefaultInterruptHandler(void){
 [e :U _TMR2_DefaultInterruptHandler ]
 [f ]
-[; ;tmr2.c: 159: cnt++;
-"159
-[e ++ _cnt -> -> 1 `i `ui ]
-[; ;tmr2.c: 161: if (cnt >= 100) {
-"161
-[e $ ! >= _cnt -> -> 100 `i `ui 599  ]
-{
-[; ;tmr2.c: 162: if (ADC_IsConversionDone()) {
-"162
-[e $ ! != -> ( _ADC_IsConversionDone ..  `i -> -> -> 0 `i `uc `i 600  ]
-{
-[; ;tmr2.c: 163: val = ADC_GetConversion(Cds_IN);
-"163
-[e = _val ( _ADC_GetConversion (1 . `E4019 0 ]
-[; ;tmr2.c: 164: printf("%d\r\n", val);
-"164
-[e ( _printf , (. :s 1C _val ]
-"165
+[; ;tmr2.c: 147: }
+"147
+[e :UE 596 ]
 }
-[e :U 600 ]
-[; ;tmr2.c: 165: }
-[; ;tmr2.c: 167: cnt = 0;
-"167
-[e = _cnt -> -> 0 `i `ui ]
-[; ;tmr2.c: 168: val = 0;
-"168
-[e = _val -> -> 0 `i `ui ]
-"169
-}
-[e :U 599 ]
-[; ;tmr2.c: 169: }
-[; ;tmr2.c: 170: }
-"170
-[e :UE 598 ]
-}
-[p f _printf 8388736 ]
-[a 1C 37 100 13 10 0 ]
-

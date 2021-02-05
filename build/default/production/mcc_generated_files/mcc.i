@@ -7204,7 +7204,7 @@ adc_result_t adcResult2;
 # 95
 typedef enum
 {
-Cds_IN = 0x2,
+CDS_IN = 0x2,
 channel_FVRBuffer2 = 0x1C,
 channel_Temp = 0x1D,
 channel_DAC = 0x1E,

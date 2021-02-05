@@ -7046,12 +7046,12 @@ LATA = 0x00;
 LATC = 0x00;
 
 # 66
-TRISA = 0x06;
+TRISA = 0x04;
 TRISC = 0x20;
 
 # 72
 ANSELC = 0x00;
-ANSELA = 0x06;
+ANSELA = 0x04;
 
 # 78
 WPUA = 0x00;

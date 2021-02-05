@@ -7133,7 +7133,7 @@ adc_result_t adcResult2;
 # 95
 typedef enum
 {
-Cds_IN = 0x2,
+CDS_IN = 0x2,
 channel_FVRBuffer2 = 0x1C,
 channel_Temp = 0x1D,
 channel_DAC = 0x1E,
@@ -7170,7 +7170,7 @@ void ADC_Initialize(void)
 
 
 
-ADCON1 = 0x42;
+ADCON1 = 0xC0;
 
 
 ADCON2 = 0x00;
@@ -7182,7 +7182,7 @@ ADRESL = 0x00;
 ADRESH = 0x00;
 
 
-ADCON0 = 0x01;
+ADCON0 = 0x09;
 
 }
 

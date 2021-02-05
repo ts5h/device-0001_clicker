@@ -51,9 +51,6 @@
 #include <xc.h>
 #include "tmr2.h"
 
-#include "adc.h"
-#include <stdio.h>
-
 /**
   Section: Global Variables Definitions
 */
@@ -85,9 +82,6 @@ void TMR2_Initialize(void)
 
     // T2CKPS 1:64; T2OUTPS 1:4; TMR2ON on; 
     T2CON = 0x1F;
-    
-    ADC_Initialize();
-    ADC_StartConversion();
 }
 
 void TMR2_StartTimer(void)
@@ -147,26 +141,9 @@ void TMR2_SetInterruptHandler(void (* InterruptHandler)(void)){
     TMR2_InterruptHandler = InterruptHandler;
 }
 
-
-unsigned int cnt = 0;
-uint16_t val = 0;
-
-// Every 1ms
 void TMR2_DefaultInterruptHandler(void){
     // add your TMR2 interrupt custom code
     // or set custom function using TMR2_SetInterruptHandler()
-    
-    cnt++;
-    
-    if (cnt >= 100) {
-        if (ADC_IsConversionDone()) {
-            val = ADC_GetConversion(Cds_IN);
-            printf("%d\r\n", val);
-        }
-        
-        cnt = 0;
-        val = 0;
-    }
 }
 
 /**

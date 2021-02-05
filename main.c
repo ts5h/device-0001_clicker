@@ -41,14 +41,13 @@
     SOFTWARE.
 */
 
-#include <stdio.h>
 #include "mcc_generated_files/mcc.h"
-
-#include <xc.h>
+#include <stdio.h>
 
 /*
                          Main application
  */
+
 void main(void)
 {
     TXSTAbits.TXEN = 1;
@@ -72,10 +71,23 @@ void main(void)
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
+    
+    adc_result_t val;
+    unsigned int tmp;
+    unsigned int delay;
+    
+    unsigned int delayMin = 50;
+    unsigned int delayMax = 1000;
 
     while (1)
     {
         // Add your application code
+        val = ADC_GetConversion(CDS_IN);
+        
+        delay = (int)((double)val / 255.0 * (double)(delayMax - delayMin)) + delayMin;
+        printf("%d\r\n", delay);
+        
+        __delay_ms(50);
     }
 }
 /**

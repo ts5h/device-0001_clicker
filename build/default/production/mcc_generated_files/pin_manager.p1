@@ -4708,18 +4708,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.c: 61: LATC = 0x00;
 "61
 [e = _LATC -> -> 0 `i `uc ]
-[; ;pin_manager.c: 66: TRISA = 0x06;
+[; ;pin_manager.c: 66: TRISA = 0x04;
 "66
-[e = _TRISA -> -> 6 `i `uc ]
+[e = _TRISA -> -> 4 `i `uc ]
 [; ;pin_manager.c: 67: TRISC = 0x20;
 "67
 [e = _TRISC -> -> 32 `i `uc ]
 [; ;pin_manager.c: 72: ANSELC = 0x00;
 "72
 [e = _ANSELC -> -> 0 `i `uc ]
-[; ;pin_manager.c: 73: ANSELA = 0x06;
+[; ;pin_manager.c: 73: ANSELA = 0x04;
 "73
-[e = _ANSELA -> -> 6 `i `uc ]
+[e = _ANSELA -> -> 4 `i `uc ]
 [; ;pin_manager.c: 78: WPUA = 0x00;
 "78
 [e = _WPUA -> -> 0 `i `uc ]

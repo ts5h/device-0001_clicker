@@ -7153,117 +7153,10 @@ extern void (*TMR2_InterruptHandler)(void);
 # 379
 void TMR2_DefaultInterruptHandler(void);
 
-# 15 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
-
-# 72 "mcc_generated_files/adc.h"
-typedef uint16_t adc_result_t;
-
-# 77
-typedef struct
-{
-adc_result_t adcResult1;
-adc_result_t adcResult2;
-} adc_sync_double_result_t;
-
-# 95
-typedef enum
-{
-Cds_IN = 0x2,
-channel_FVRBuffer2 = 0x1C,
-channel_Temp = 0x1D,
-channel_DAC = 0x1E,
-channel_FVRBuffer1 = 0x1F
-} adc_channel_t;
-
-# 137
-void ADC_Initialize(void);
-
-# 167
-void ADC_SelectChannel(adc_channel_t channel);
-
-# 194
-void ADC_StartConversion(void);
-
-# 226
-bool ADC_IsConversionDone(void);
-
-# 259
-adc_result_t ADC_GetConversionResult(void);
-
-# 289
-adc_result_t ADC_GetConversion(adc_channel_t channel);
-
-# 317
-void ADC_TemperatureAcquisitionDelay(void);
-
-# 4 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\__size_t.h"
-typedef unsigned size_t;
-
-# 7 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 43 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdio.h"
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 29 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\errno.h"
-extern int errno;
-
-# 12 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\conio.h"
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 23
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 88 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 180
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 61 "mcc_generated_files/tmr2.c"
+# 58 "mcc_generated_files/tmr2.c"
 void (*TMR2_InterruptHandler)(void);
 
-# 67
+# 64
 void TMR2_Initialize(void)
 {
 
@@ -7285,9 +7178,6 @@ TMR2_SetInterruptHandler(TMR2_DefaultInterruptHandler);
 
 
 T2CON = 0x1F;
-
-ADC_Initialize();
-ADC_StartConversion();
 }
 
 void TMR2_StartTimer(void)
@@ -7347,25 +7237,8 @@ void TMR2_SetInterruptHandler(void (* InterruptHandler)(void)){
 TMR2_InterruptHandler = InterruptHandler;
 }
 
-
-unsigned int cnt = 0;
-uint16_t val = 0;
-
-
 void TMR2_DefaultInterruptHandler(void){
 
 
-
-cnt++;
-
-if (cnt >= 100) {
-if (ADC_IsConversionDone()) {
-val = ADC_GetConversion(Cds_IN);
-printf("%d\r\n", val);
-}
-
-cnt = 0;
-val = 0;
-}
 }
 

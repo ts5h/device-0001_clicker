@@ -105,25 +105,25 @@
 #define IO_RA1_SetAnalogMode()      do { ANSELAbits.ANSA1 = 1; } while(0)
 #define IO_RA1_SetDigitalMode()     do { ANSELAbits.ANSA1 = 0; } while(0)
 
-// get/set Cds_IN aliases
-#define Cds_IN_TRIS                 TRISAbits.TRISA2
-#define Cds_IN_LAT                  LATAbits.LATA2
-#define Cds_IN_PORT                 PORTAbits.RA2
-#define Cds_IN_WPU                  WPUAbits.WPUA2
-#define Cds_IN_OD                   ODCONAbits.ODA2
-#define Cds_IN_ANS                  ANSELAbits.ANSA2
-#define Cds_IN_SetHigh()            do { LATAbits.LATA2 = 1; } while(0)
-#define Cds_IN_SetLow()             do { LATAbits.LATA2 = 0; } while(0)
-#define Cds_IN_Toggle()             do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
-#define Cds_IN_GetValue()           PORTAbits.RA2
-#define Cds_IN_SetDigitalInput()    do { TRISAbits.TRISA2 = 1; } while(0)
-#define Cds_IN_SetDigitalOutput()   do { TRISAbits.TRISA2 = 0; } while(0)
-#define Cds_IN_SetPullup()          do { WPUAbits.WPUA2 = 1; } while(0)
-#define Cds_IN_ResetPullup()        do { WPUAbits.WPUA2 = 0; } while(0)
-#define Cds_IN_SetPushPull()        do { ODCONAbits.ODA2 = 0; } while(0)
-#define Cds_IN_SetOpenDrain()       do { ODCONAbits.ODA2 = 1; } while(0)
-#define Cds_IN_SetAnalogMode()      do { ANSELAbits.ANSA2 = 1; } while(0)
-#define Cds_IN_SetDigitalMode()     do { ANSELAbits.ANSA2 = 0; } while(0)
+// get/set CDS_IN aliases
+#define CDS_IN_TRIS                 TRISAbits.TRISA2
+#define CDS_IN_LAT                  LATAbits.LATA2
+#define CDS_IN_PORT                 PORTAbits.RA2
+#define CDS_IN_WPU                  WPUAbits.WPUA2
+#define CDS_IN_OD                   ODCONAbits.ODA2
+#define CDS_IN_ANS                  ANSELAbits.ANSA2
+#define CDS_IN_SetHigh()            do { LATAbits.LATA2 = 1; } while(0)
+#define CDS_IN_SetLow()             do { LATAbits.LATA2 = 0; } while(0)
+#define CDS_IN_Toggle()             do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
+#define CDS_IN_GetValue()           PORTAbits.RA2
+#define CDS_IN_SetDigitalInput()    do { TRISAbits.TRISA2 = 1; } while(0)
+#define CDS_IN_SetDigitalOutput()   do { TRISAbits.TRISA2 = 0; } while(0)
+#define CDS_IN_SetPullup()          do { WPUAbits.WPUA2 = 1; } while(0)
+#define CDS_IN_ResetPullup()        do { WPUAbits.WPUA2 = 0; } while(0)
+#define CDS_IN_SetPushPull()        do { ODCONAbits.ODA2 = 0; } while(0)
+#define CDS_IN_SetOpenDrain()       do { ODCONAbits.ODA2 = 1; } while(0)
+#define CDS_IN_SetAnalogMode()      do { ANSELAbits.ANSA2 = 1; } while(0)
+#define CDS_IN_SetDigitalMode()     do { ANSELAbits.ANSA2 = 0; } while(0)
 
 // get/set IO_RA4 aliases
 #define IO_RA4_TRIS                 TRISAbits.TRISA4

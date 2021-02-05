@@ -4735,7 +4735,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.h: 81: } adc_sync_double_result_t;
 [; ;adc.h: 95: typedef enum
 [; ;adc.h: 96: {
-[; ;adc.h: 97: Cds_IN = 0x2,
+[; ;adc.h: 97: CDS_IN = 0x2,
 [; ;adc.h: 98: channel_FVRBuffer2 = 0x1C,
 [; ;adc.h: 99: channel_Temp = 0x1D,
 [; ;adc.h: 100: channel_DAC = 0x1E,
