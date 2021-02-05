@@ -44,6 +44,8 @@
 #include <stdio.h>
 #include "mcc_generated_files/mcc.h"
 
+#include <xc.h>
+
 /*
                          Main application
  */

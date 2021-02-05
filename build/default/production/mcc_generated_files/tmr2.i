@@ -7153,6 +7153,50 @@ extern void (*TMR2_InterruptHandler)(void);
 # 379
 void TMR2_DefaultInterruptHandler(void);
 
+# 15 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 72 "mcc_generated_files/adc.h"
+typedef uint16_t adc_result_t;
+
+# 77
+typedef struct
+{
+adc_result_t adcResult1;
+adc_result_t adcResult2;
+} adc_sync_double_result_t;
+
+# 95
+typedef enum
+{
+Cds_IN = 0x2,
+channel_FVRBuffer2 = 0x1C,
+channel_Temp = 0x1D,
+channel_DAC = 0x1E,
+channel_FVRBuffer1 = 0x1F
+} adc_channel_t;
+
+# 137
+void ADC_Initialize(void);
+
+# 167
+void ADC_SelectChannel(adc_channel_t channel);
+
+# 194
+void ADC_StartConversion(void);
+
+# 226
+bool ADC_IsConversionDone(void);
+
+# 259
+adc_result_t ADC_GetConversionResult(void);
+
+# 289
+adc_result_t ADC_GetConversion(adc_channel_t channel);
+
+# 317
+void ADC_TemperatureAcquisitionDelay(void);
+
 # 4 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\__size_t.h"
 typedef unsigned size_t;
 
@@ -7216,16 +7260,16 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 60 "mcc_generated_files/tmr2.c"
+# 61 "mcc_generated_files/tmr2.c"
 void (*TMR2_InterruptHandler)(void);
 
-# 66
+# 67
 void TMR2_Initialize(void)
 {
 
 
 
-PR2 = 0x26;
+PR2 = 0x03;
 
 
 TMR2 = 0x00;
@@ -7241,6 +7285,9 @@ TMR2_SetInterruptHandler(TMR2_DefaultInterruptHandler);
 
 
 T2CON = 0x1F;
+
+ADC_Initialize();
+ADC_StartConversion();
 }
 
 void TMR2_StartTimer(void)
@@ -7302,7 +7349,7 @@ TMR2_InterruptHandler = InterruptHandler;
 
 
 unsigned int cnt = 0;
-unsigned int sec = 0;
+uint16_t val = 0;
 
 
 void TMR2_DefaultInterruptHandler(void){
@@ -7312,9 +7359,13 @@ void TMR2_DefaultInterruptHandler(void){
 cnt++;
 
 if (cnt >= 100) {
-printf("%d\r\n", sec);
-sec++;
+if (ADC_IsConversionDone()) {
+val = ADC_GetConversion(Cds_IN);
+printf("%d\r\n", val);
+}
+
 cnt = 0;
+val = 0;
 }
 }
 

@@ -3,6 +3,14 @@
 [d edition pro ]
 [d chip 16F1705 ]
 [d frameptr 6 ]
+"163 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/tmr2.c
+[e E4019 . `uc
+Cds_IN 2
+channel_FVRBuffer2 28
+channel_Temp 29
+channel_DAC 30
+channel_FVRBuffer1 31
+]
 "89 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/adc.c
 [e E3994 . `uc
 Cds_IN 2
@@ -21,10 +29,16 @@ channel_FVRBuffer1 31
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"50 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\main.c
+"52 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "67 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+"96
+[v _ADC_StartConversion ADC_StartConversion `(v  1 e 1 0 ]
+"103
+[v _ADC_IsConversionDone ADC_IsConversionDone `(uc  1 e 1 0 ]
+"115
+[v _ADC_GetConversion ADC_GetConversion `(ui  1 e 2 0 ]
 "88 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 "151
@@ -67,17 +81,17 @@ channel_FVRBuffer1 31
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "64 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/pwm1.c
 [v _PWM1_Initialize PWM1_Initialize `(v  1 e 1 0 ]
-"66 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/tmr2.c
+"67 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
-"121
+"125
 [v _TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
-"132
+"136
 [v _TMR2_CallBack TMR2_CallBack `(v  1 e 1 0 ]
-"142
+"146
 [v _TMR2_SetInterruptHandler TMR2_SetInterruptHandler `(v  1 e 1 0 ]
-"151
+"155
 [v _TMR2_DefaultInterruptHandler TMR2_DefaultInterruptHandler `(v  1 e 1 0 ]
-[s S578 . 1 `uc 1 IOCIF 1 0 :1:0 
+[s S598 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 IOCIE 1 0 :1:3 
@@ -87,13 +101,13 @@ channel_FVRBuffer1 31
 `uc 1 GIE 1 0 :1:7 
 ]
 "374 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1705.h
-[s S587 . 1 `uc 1 . 1 0 :2:0 
+[s S607 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S592 . 1 `S578 1 . 1 0 `S587 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES592  1 e 1 @11 ]
+[u S612 . 1 `S598 1 . 1 0 `S607 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES612  1 e 1 @11 ]
 [s S124 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -115,12 +129,12 @@ channel_FVRBuffer1 31
 [v _PR2 PR2 `VEuc  1 e 1 @27 ]
 "951
 [v _T2CON T2CON `VEuc  1 e 1 @28 ]
-[s S191 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[s S199 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 T2OUTPS 1 0 :4:3 
 ]
 "972
-[s S195 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S203 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 T2OUTPS0 1 0 :1:3 
@@ -128,8 +142,8 @@ channel_FVRBuffer1 31
 `uc 1 T2OUTPS2 1 0 :1:5 
 `uc 1 T2OUTPS3 1 0 :1:6 
 ]
-[u S203 . 1 `S191 1 . 1 0 `S195 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES203  1 e 1 @28 ]
+[u S211 . 1 `S199 1 . 1 0 `S203 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES211  1 e 1 @28 ]
 "1022
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1067
@@ -180,12 +194,12 @@ channel_FVRBuffer1 31
 [v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
 "1728
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
-[s S313 . 1 `uc 1 ADON 1 0 :1:0 
+[s S333 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
 "1753
-[s S317 . 1 `uc 1 . 1 0 :1:0 
+[s S337 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADGO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -193,11 +207,11 @@ channel_FVRBuffer1 31
 `uc 1 CHS3 1 0 :1:5 
 `uc 1 CHS4 1 0 :1:6 
 ]
-[s S325 . 1 `uc 1 . 1 0 :1:0 
+[s S345 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[u S328 . 1 `S313 1 . 1 0 `S317 1 . 1 0 `S325 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES328  1 e 1 @157 ]
+[u S348 . 1 `S333 1 . 1 0 `S337 1 . 1 0 `S345 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES348  1 e 1 @157 ]
 "1808
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "1861
@@ -222,7 +236,7 @@ channel_FVRBuffer1 31
 [v _SP1BRGH SP1BRGH `VEuc  1 e 1 @412 ]
 "3206
 [v _RC1STA RC1STA `VEuc  1 e 1 @413 ]
-[s S473 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S493 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -232,13 +246,13 @@ channel_FVRBuffer1 31
 `uc 1 SPEN 1 0 :1:7 
 ]
 "3232
-[u S482 . 1 `S473 1 . 1 0 ]
-[v _RC1STAbits RC1STAbits `VES482  1 e 1 @413 ]
+[u S502 . 1 `S493 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES502  1 e 1 @413 ]
 "3341
-[v _RCSTAbits RCSTAbits `VES482  1 e 1 @413 ]
+[v _RCSTAbits RCSTAbits `VES502  1 e 1 @413 ]
 "3386
 [v _TX1STA TX1STA `VEuc  1 e 1 @414 ]
-[s S451 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S471 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -248,10 +262,10 @@ channel_FVRBuffer1 31
 `uc 1 CSRC 1 0 :1:7 
 ]
 "3412
-[u S460 . 1 `S451 1 . 1 0 ]
-[v _TX1STAbits TX1STAbits `VES460  1 e 1 @414 ]
+[u S480 . 1 `S471 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES480  1 e 1 @414 ]
 "3521
-[v _TXSTAbits TXSTAbits `VES460  1 e 1 @414 ]
+[v _TXSTAbits TXSTAbits `VES480  1 e 1 @414 ]
 "3566
 [v _BAUD1CON BAUD1CON `VEuc  1 e 1 @415 ]
 "3812
@@ -315,18 +329,18 @@ channel_FVRBuffer1 31
 [v _eusartRxTail eusartRxTail `VEuc  1 e 1 0 ]
 "69
 [v _eusartRxBuffer eusartRxBuffer `VE[8]uc  1 e 8 0 ]
-[s S367 . 1 `uc 1 perr 1 0 :1:0 
+[s S387 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
 "70
-[u S372 . 1 `S367 1 . 1 0 `uc 1 status 1 0 ]
-[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[8]S372  1 e 8 0 ]
+[u S392 . 1 `S387 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[8]S392  1 e 8 0 ]
 "71
 [v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
 "72
-[v _eusartRxLastError eusartRxLastError `VES372  1 e 1 0 ]
+[v _eusartRxLastError eusartRxLastError `VES392  1 e 1 0 ]
 "77
 [v _EUSART_TxDefaultInterruptHandler EUSART_TxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
 "78
@@ -337,16 +351,16 @@ channel_FVRBuffer1 31
 [v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "82
 [v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
-"60 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/tmr2.c
+"61 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/tmr2.c
 [v _TMR2_InterruptHandler TMR2_InterruptHandler `*.37(v  1 e 2 0 ]
-"147
+"151
 [v _cnt cnt `ui  1 e 2 0 ]
-"148
-[v _sec sec `ui  1 e 2 0 ]
-"50 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\main.c
+"152
+[v _val val `ui  1 e 2 0 ]
+"52 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"78
+"80
 } 0
 "50 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -358,16 +372,26 @@ channel_FVRBuffer1 31
 {
 "78
 } 0
-"66 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/tmr2.c
+"67 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 {
-"87
+"91
 } 0
-"142
+"146
 [v _TMR2_SetInterruptHandler TMR2_SetInterruptHandler `(v  1 e 1 0 ]
 {
 [v TMR2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 14 ]
-"144
+"148
+} 0
+"96 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/adc.c
+[v _ADC_StartConversion ADC_StartConversion `(v  1 e 1 0 ]
+{
+"100
+} 0
+"67
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+{
+"86
 } 0
 "64 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/pwm1.c
 [v _PWM1_Initialize PWM1_Initialize `(v  1 e 1 0 ]
@@ -419,30 +443,25 @@ channel_FVRBuffer1 31
 [v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 14 ]
 "283
 } 0
-"67 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/adc.c
-[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
-{
-"86
-} 0
 "52 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
 "78
 } 0
-"121 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/tmr2.c
+"125 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/tmr2.c
 [v _TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
 {
-"130
+"134
 } 0
-"132
+"136
 [v _TMR2_CallBack TMR2_CallBack `(v  1 e 1 0 ]
 {
-"140
+"144
 } 0
-"151
+"155
 [v _TMR2_DefaultInterruptHandler TMR2_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
-"162
+"170
 } 0
 "477 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -499,6 +518,20 @@ channel_FVRBuffer1 31
 [v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
 [v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
 "30
+} 0
+"103 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/adc.c
+[v _ADC_IsConversionDone ADC_IsConversionDone `(uc  1 e 1 0 ]
+{
+"107
+} 0
+"115
+[v _ADC_GetConversion ADC_GetConversion `(ui  1 e 2 0 ]
+{
+[v ADC_GetConversion@channel channel `E3994  1 a 1 wreg ]
+[v ADC_GetConversion@channel channel `E3994  1 a 1 wreg ]
+"118
+[v ADC_GetConversion@channel channel `E3994  1 a 1 3 ]
+"136
 } 0
 "206 C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
 [v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]

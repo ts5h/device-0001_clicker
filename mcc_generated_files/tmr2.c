@@ -51,6 +51,7 @@
 #include <xc.h>
 #include "tmr2.h"
 
+#include "adc.h"
 #include <stdio.h>
 
 /**
@@ -67,8 +68,8 @@ void TMR2_Initialize(void)
 {
     // Set TMR2 to the options selected in the User Interface
 
-    // PR2 38; 
-    PR2 = 0x26;
+    // PR2 3; 
+    PR2 = 0x03;
 
     // TMR2 0; 
     TMR2 = 0x00;
@@ -84,6 +85,9 @@ void TMR2_Initialize(void)
 
     // T2CKPS 1:64; T2OUTPS 1:4; TMR2ON on; 
     T2CON = 0x1F;
+    
+    ADC_Initialize();
+    ADC_StartConversion();
 }
 
 void TMR2_StartTimer(void)
@@ -145,9 +149,9 @@ void TMR2_SetInterruptHandler(void (* InterruptHandler)(void)){
 
 
 unsigned int cnt = 0;
-unsigned int sec = 0;
+uint16_t val = 0;
 
-// Every nearly 2.5ms
+// Every 1ms
 void TMR2_DefaultInterruptHandler(void){
     // add your TMR2 interrupt custom code
     // or set custom function using TMR2_SetInterruptHandler()
@@ -155,9 +159,13 @@ void TMR2_DefaultInterruptHandler(void){
     cnt++;
     
     if (cnt >= 100) {
-        printf("%d\r\n", sec);
-        sec++;
+        if (ADC_IsConversionDone()) {
+            val = ADC_GetConversion(Cds_IN);
+            printf("%d\r\n", val);
+        }
+        
         cnt = 0;
+        val = 0;
     }
 }
 

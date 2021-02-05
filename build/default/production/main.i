@@ -7354,7 +7354,7 @@ void OSCILLATOR_Initialize(void);
 # 99
 void WDT_Initialize(void);
 
-# 50 "main.c"
+# 52 "main.c"
 void main(void)
 {
 TXSTAbits.TXEN = 1;
@@ -7363,13 +7363,13 @@ RCSTAbits.SPEN = 1;
 
 SYSTEM_Initialize();
 
-# 63
+# 65
 (INTCONbits.GIE = 1);
 
 
 (INTCONbits.PEIE = 1);
 
-# 74
+# 76
 while (1)
 {
 

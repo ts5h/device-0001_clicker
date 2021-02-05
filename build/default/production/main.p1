@@ -4808,43 +4808,43 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.h: 87: void OSCILLATOR_Initialize(void);
 [; ;mcc.h: 99: void WDT_Initialize(void);
 [v $root$_main `(v ~T0 @X0 0 e ]
-"50 main.c
+"52 main.c
 [v _main `(v ~T0 @X0 1 ef ]
-"51
+"53
 {
-[; ;main.c: 50: void main(void)
-[; ;main.c: 51: {
+[; ;main.c: 52: void main(void)
+[; ;main.c: 53: {
 [e :U _main ]
 [f ]
-[; ;main.c: 52: TXSTAbits.TXEN = 1;
-"52
+[; ;main.c: 54: TXSTAbits.TXEN = 1;
+"54
 [e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 53: RCSTAbits.SPEN = 1;
-"53
+[; ;main.c: 55: RCSTAbits.SPEN = 1;
+"55
 [e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 56: SYSTEM_Initialize();
-"56
+[; ;main.c: 58: SYSTEM_Initialize();
+"58
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 63: (INTCONbits.GIE = 1);
-"63
+[; ;main.c: 65: (INTCONbits.GIE = 1);
+"65
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 66: (INTCONbits.PEIE = 1);
-"66
+[; ;main.c: 68: (INTCONbits.PEIE = 1);
+"68
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 74: while (1)
-"74
+[; ;main.c: 76: while (1)
+"76
 [e :U 592 ]
-[; ;main.c: 75: {
-"75
-{
+[; ;main.c: 77: {
 "77
+{
+"79
 }
 [e :U 591 ]
-"74
+"76
 [e $U 592  ]
 [e :U 593 ]
-[; ;main.c: 77: }
-[; ;main.c: 78: }
-"78
+[; ;main.c: 79: }
+[; ;main.c: 80: }
+"80
 [e :UE 590 ]
 }
