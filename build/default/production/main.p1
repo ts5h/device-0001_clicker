@@ -29,7 +29,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S25 . . . ]
 "374
 [v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
-"85 main.c
+"101 main.c
 [c E4044 2 28 29 30 31 .. ]
 [n E4044 . CDS_IN channel_FVRBuffer2 channel_Temp channel_DAC channel_FVRBuffer1  ]
 "289 mcc_generated_files/adc.h
@@ -4818,76 +4818,134 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.h: 74: void SYSTEM_Initialize(void);
 [; ;mcc.h: 87: void OSCILLATOR_Initialize(void);
 [; ;mcc.h: 99: void WDT_Initialize(void);
-[v $root$_main `(v ~T0 @X0 0 e ]
-"51 main.c
-[v _main `(v ~T0 @X0 1 ef ]
-"52
-{
-[; ;main.c: 51: void main(void)
-[; ;main.c: 52: {
-[e :U _main ]
-[f ]
-[; ;main.c: 53: TXSTAbits.TXEN = 1;
+"52 main.c
+[v _map `(i ~T0 @X0 1 ef5`i`i`i`i`i ]
 "53
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 54: RCSTAbits.SPEN = 1;
-"54
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 57: SYSTEM_Initialize();
-"57
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 64: (INTCONbits.GIE = 1);
-"64
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 67: (INTCONbits.PEIE = 1);
-"67
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"75
-[v _val `ui ~T0 @X0 1 a ]
-"76
-[v _tmp `ui ~T0 @X0 1 a ]
-"77
-[v _delay `ui ~T0 @X0 1 a ]
-"79
-[v _delayMin `ui ~T0 @X0 1 a ]
-[; ;main.c: 75: adc_result_t val;
-[; ;main.c: 76: unsigned int tmp;
-[; ;main.c: 77: unsigned int delay;
-[; ;main.c: 79: unsigned int delayMin = 50;
-[e = _delayMin -> -> 50 `i `ui ]
-"80
-[v _delayMax `ui ~T0 @X0 1 a ]
-[; ;main.c: 80: unsigned int delayMax = 1000;
-[e = _delayMax -> -> 1000 `i `ui ]
-[; ;main.c: 82: while (1)
-"82
-[e :U 592 ]
-[; ;main.c: 83: {
-"83
 {
-[; ;main.c: 85: val = ADC_GetConversion(CDS_IN);
-"85
-[e = _val ( _ADC_GetConversion (1 . `E4044 0 ]
-[; ;main.c: 87: delay = (int)((double)val / 255.0 * (double)(delayMax - delayMin)) + delayMin;
-"87
-[e = _delay + -> -> * / -> _val `d .255.0 -> - _delayMax _delayMin `d `i `ui _delayMin ]
-[; ;main.c: 88: printf("%d\r\n", delay);
-"88
-[e ( _printf , (. :s 1C _delay ]
-[; ;main.c: 90: _delay((unsigned long)((50)*(4000000/4000.0)));
-"90
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"91
-}
-[e :U 591 ]
-"82
-[e $U 592  ]
-[e :U 593 ]
-[; ;main.c: 91: }
-[; ;main.c: 92: }
-"92
+[; ;main.c: 52: int map(int target_num, int in_min, int in_max, int out_min, int out_max)
+[; ;main.c: 53: {
+[e :U _map ]
+"52
+[v _target_num `i ~T0 @X0 1 r1 ]
+[v _in_min `i ~T0 @X0 1 r2 ]
+[v _in_max `i ~T0 @X0 1 r3 ]
+[v _out_min `i ~T0 @X0 1 r4 ]
+[v _out_max `i ~T0 @X0 1 r5 ]
+"53
+[f ]
+"54
+[v _input_diff `i ~T0 @X0 1 a ]
+[; ;main.c: 54: int input_diff = in_max - target_num;
+[e = _input_diff - _in_max _target_num ]
+"55
+[v _input_range `i ~T0 @X0 1 a ]
+[; ;main.c: 55: int input_range = in_max - in_min;
+[e = _input_range - _in_max _in_min ]
+"56
+[v _output_range `i ~T0 @X0 1 a ]
+[; ;main.c: 56: int output_range = out_max - out_min;
+[e = _output_range - _out_max _out_min ]
+"60
+[v _percentage `d ~T0 @X0 1 a ]
+[; ;main.c: 60: double percentage = (double)input_diff / (double)input_range;
+[e = _percentage / -> _input_diff `d -> _input_range `d ]
+"61
+[v _out_diff `i ~T0 @X0 1 a ]
+[; ;main.c: 61: int out_diff = (int)((double)output_range * percentage + 0.5);
+[e = _out_diff -> + * -> _output_range `d _percentage .0.5 `i ]
+[; ;main.c: 63: return out_max - out_diff;
+"63
+[e ) - _out_max _out_diff ]
+[e $UE 590  ]
+[; ;main.c: 64: }
+"64
 [e :UE 590 ]
 }
+[v $root$_main `(v ~T0 @X0 0 e ]
+"66
+[v _main `(v ~T0 @X0 1 ef ]
+"67
+{
+[; ;main.c: 66: void main(void)
+[; ;main.c: 67: {
+[e :U _main ]
+[f ]
+[; ;main.c: 68: TXSTAbits.TXEN = 1;
+"68
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 69: RCSTAbits.SPEN = 1;
+"69
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 72: SYSTEM_Initialize();
+"72
+[e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 79: (INTCONbits.GIE = 1);
+"79
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 82: (INTCONbits.PEIE = 1);
+"82
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"90
+[v _val `ui ~T0 @X0 1 a ]
+"91
+[v _minLimit `ui ~T0 @X0 1 a ]
+[; ;main.c: 90: adc_result_t val;
+[; ;main.c: 91: unsigned int minLimit = 90;
+[e = _minLimit -> -> 90 `i `ui ]
+"92
+[v _maxLimit `ui ~T0 @X0 1 a ]
+[; ;main.c: 92: unsigned int maxLimit = 150;
+[e = _maxLimit -> -> 150 `i `ui ]
+"94
+[v _delayMin `ui ~T0 @X0 1 a ]
+[; ;main.c: 94: unsigned int delayMin = 50;
+[e = _delayMin -> -> 50 `i `ui ]
+"95
+[v _delayMax `ui ~T0 @X0 1 a ]
+[; ;main.c: 95: unsigned int delayMax = 1000;
+[e = _delayMax -> -> 1000 `i `ui ]
+"96
+[v _delay `ui ~T0 @X0 1 a ]
+[; ;main.c: 96: unsigned int delay;
+[; ;main.c: 98: while (1)
+"98
+[e :U 593 ]
+[; ;main.c: 99: {
+"99
+{
+[; ;main.c: 101: val = ADC_GetConversion(CDS_IN);
+"101
+[e = _val ( _ADC_GetConversion (1 . `E4044 0 ]
+[; ;main.c: 102: if (val < minLimit) val = minLimit;
+"102
+[e $ ! < _val _minLimit 595  ]
+[e = _val _minLimit ]
+[e :U 595 ]
+[; ;main.c: 103: if (val > maxLimit) val = maxLimit;
+"103
+[e $ ! > _val _maxLimit 596  ]
+[e = _val _maxLimit ]
+[e :U 596 ]
+[; ;main.c: 105: delay = delayMax + delayMin - map(val, minLimit, maxLimit, delayMin, delayMax);
+"105
+[e = _delay - + _delayMax _delayMin -> ( _map (4 , , , , -> _val `i -> _minLimit `i -> _maxLimit `i -> _delayMin `i -> _delayMax `i `ui ]
+[; ;main.c: 106: printf("%d, %d\r\n", val, delay);
+"106
+[e ( _printf , , (. :s 1C _val _delay ]
+[; ;main.c: 108: _delay((unsigned long)((50)*(4000000/4000.0)));
+"108
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"109
+}
+[e :U 592 ]
+"98
+[e $U 593  ]
+[e :U 594 ]
+[; ;main.c: 109: }
+[; ;main.c: 110: }
+"110
+[e :UE 591 ]
+}
 [p f _printf 8388736 ]
-[a 1C 37 100 13 10 0 ]
+[a 1C 37 100 44 32 37 100 13 10 0 ]
 

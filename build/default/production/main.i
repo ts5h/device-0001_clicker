@@ -7354,7 +7354,21 @@ void OSCILLATOR_Initialize(void);
 # 99
 void WDT_Initialize(void);
 
-# 51 "main.c"
+# 52 "main.c"
+int map(int target_num, int in_min, int in_max, int out_min, int out_max)
+{
+int input_diff = in_max - target_num;
+int input_range = in_max - in_min;
+int output_range = out_max - out_min;
+
+
+
+double percentage = (double)input_diff / (double)input_range;
+int out_diff = (int)((double)output_range * percentage + 0.5);
+
+return out_max - out_diff;
+}
+
 void main(void)
 {
 TXSTAbits.TXEN = 1;
@@ -7363,27 +7377,30 @@ RCSTAbits.SPEN = 1;
 
 SYSTEM_Initialize();
 
-# 64
+# 79
 (INTCONbits.GIE = 1);
 
 
 (INTCONbits.PEIE = 1);
 
-# 75
+# 90
 adc_result_t val;
-unsigned int tmp;
-unsigned int delay;
+unsigned int minLimit = 90;
+unsigned int maxLimit = 150;
 
 unsigned int delayMin = 50;
 unsigned int delayMax = 1000;
+unsigned int delay;
 
 while (1)
 {
 
 val = ADC_GetConversion(CDS_IN);
+if (val < minLimit) val = minLimit;
+if (val > maxLimit) val = maxLimit;
 
-delay = (int)((double)val / 255.0 * (double)(delayMax - delayMin)) + delayMin;
-printf("%d\r\n", delay);
+delay = delayMax + delayMin - map(val, minLimit, maxLimit, delayMin, delayMax);
+printf("%d, %d\r\n", val, delay);
 
 _delay((unsigned long)((50)*(4000000/4000.0)));
 }
