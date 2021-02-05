@@ -4,7 +4,7 @@ __end_of_TMR2_ISR 33B 0 CODE 0
 ___lwdiv@counter 77 0 COMMON 1
 _EUSART_SetFramingErrorHandler 329 0 CODE 0
 _PR2 1B 0 ABS 0
-__S0 352 0 ABS 0
+__S0 353 0 ABS 0
 __S1 7E 0 ABS 0
 __S2 0 0 ABS 0
 __end_of_PWM1_Initialize 2FA 0 CODE 0
@@ -17,7 +17,7 @@ _TMR2_DefaultInterruptHandler 26B 0 CODE 0
 _TMR2 1A 0 ABS 0
 _LATA 10C 0 ABS 0
 _LATC 10E 0 ABS 0
-_EUSART_DefaultOverrunErrorHandler 349 0 CODE 0
+_EUSART_DefaultOverrunErrorHandler 34A 0 CODE 0
 _WPUA 20C 0 ABS 0
 _WPUC 20E 0 ABS 0
 __end_of_PIN_MANAGER_Initialize 249 0 CODE 0
@@ -58,7 +58,7 @@ __end_of_TMR2_Initialize 2CF 0 CODE 0
 int$flags 7E 0 ABS 0
 __Hfunctab 0 0 ENTRY 0
 __Lfunctab 0 0 ENTRY 0
-__end_of_WDT_Initialize 349 0 CODE 0
+__end_of_WDT_Initialize 34A 0 CODE 0
 _ADCON0 9D 0 ABS 0
 _ADCON1 9E 0 ABS 0
 _INTERRUPT_InterruptManager 4 0 CODE 0
@@ -97,7 +97,7 @@ _WDTCON 97 0 ABS 0
 __Hsfr0 0 0 ABS 0
 __Lsfr0 0 0 ABS 0
 __Hsfr1 0 0 ABS 0
-__end_of_EUSART_DefaultOverrunErrorHandler 34D 0 CODE 0
+__end_of_EUSART_DefaultOverrunErrorHandler 34E 0 CODE 0
 __Lsfr1 0 0 ABS 0
 __Hsfr2 0 0 ABS 0
 __Lsfr2 0 0 ABS 0
@@ -131,7 +131,7 @@ __HcstackBANK0 0 0 ABS 0
 __LcstackBANK0 0 0 ABS 0
 _printf 48 0 CODE 0
 __pcstackBANK0 44 0 BANK0 1
-__end_of_EUSART_DefaultErrorHandler 351 0 CODE 0
+__end_of_EUSART_DefaultErrorHandler 352 0 CODE 0
 __Hstringtext2 0 0 ABS 0
 __Lstringtext2 0 0 ABS 0
 __Hinit 3A 0 CODE 0
@@ -236,7 +236,7 @@ __Lbank8 0 0 ABS 0
 __Hbank9 0 0 ABS 0
 __Lbank9 0 0 ABS 0
 __ptext1 2A6 0 CODE 0
-__ptext2 345 0 CODE 0
+__ptext2 346 0 CODE 0
 __ptext3 2BC 0 CODE 0
 __ptext4 311 0 CODE 0
 __ptext5 2F1 0 CODE 0
@@ -267,7 +267,7 @@ __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
 _EUSART_ErrorHandler 55 0 BANK0 1
 ___lwmod 1C4 0 CODE 0
-__Hspace_0 352 0 ABS 0
+__Hspace_0 353 0 ABS 0
 __Lspace_0 0 0 ABS 0
 ?_printf 44 0 BANK0 1
 __Hspace_1 7E 0 ABS 0
@@ -362,19 +362,19 @@ __Lbank29 0 0 BANK29 1
 __ptext25 18A 0 CODE 0
 __size_of_EUSART_SetErrorHandler 0 0 ABS 0
 __ptext16 335 0 CODE 0
-__ptext26 349 0 CODE 0
+__ptext26 34A 0 CODE 0
 __size_of_EUSART_Write 0 0 ABS 0
 __end_of_EUSART_SetOverrunErrorHandler 329 0 CODE 0
 __end_of_printf 10A 0 CODE 0
 __ptext17 2CF 0 CODE 0
 __end_of_EUSART_Receive_ISR 1C4 0 CODE 0
 __end_of___lwmod 1F8 0 CODE 0
-__ptext27 351 0 CODE 0
+__ptext27 352 0 CODE 0
 ___lwmod@divisor 78 0 COMMON 1
 __ptext18 26B 0 CODE 0
 _RC1STAbits 19D 0 ABS 0
 _TX1STAbits 19E 0 ABS 0
-__ptext28 34D 0 CODE 0
+__ptext28 34E 0 CODE 0
 __ptext19 48 0 CODE 0
 __ptext29 28C 0 CODE 0
 _INTCONbits B 0 ABS 0
@@ -384,7 +384,7 @@ EUSART_SetOverrunErrorHandler@interruptHandler 52 0 BANK0 1
 __size_of_EUSART_Receive_ISR 0 0 ABS 0
 ___lwdiv@divisor 70 0 COMMON 1
 _ADC_Initialize 2FA 0 CODE 0
-_WDT_Initialize 345 0 CODE 0
+_WDT_Initialize 346 0 CODE 0
 __end_of_EUSART_RxDataHandler 2A6 0 CODE 0
 _EUSART_SetErrorHandler 32F 0 CODE 0
 _OSCILLATOR_Initialize 303 0 CODE 0
@@ -394,12 +394,12 @@ __Lreset_vec 0 0 CODE 0
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0
 _BAUD1CON 19F 0 ABS 0
 __size_of_TMR2_ISR 0 0 ABS 0
-__end_of_EUSART_DefaultFramingErrorHandler 352 0 CODE 0
+__end_of_EUSART_DefaultFramingErrorHandler 353 0 CODE 0
 intlevel0 0 0 ENTRY 0
 intlevel1 0 0 ENTRY 0
 intlevel2 0 0 ENTRY 0
 __size_of_EUSART_RxDataHandler 0 0 ABS 0
-_EUSART_DefaultFramingErrorHandler 351 0 CODE 0
+_EUSART_DefaultFramingErrorHandler 352 0 CODE 0
 intlevel3 0 0 ENTRY 0
 __size_of_EUSART_DefaultOverrunErrorHandler 0 0 ABS 0
 intlevel4 0 0 ENTRY 0
@@ -427,7 +427,7 @@ _OPTION_REGbits 95 0 ABS 0
 EUSART_SetRxInterruptHandler@interruptHandler 52 0 BANK0 1
 __initialization 3C 0 CODE 0
 __size_of_TMR2_CallBack 0 0 ABS 0
-_EUSART_DefaultErrorHandler 34D 0 CODE 0
+_EUSART_DefaultErrorHandler 34E 0 CODE 0
 _eusartRxTail 40 0 BANK0 1
 __size_of_TMR2_Initialize 0 0 ABS 0
 _eusartTxTail 42 0 BANK0 1
@@ -441,31 +441,31 @@ cstackCOMMON 70 7D COMMON 70 1
 bssBANK0 20 61 BANK0 20 1
 stringtext1 5CE 5E1 STRCODE 5CE 0
 text5 5E2 681 CODE 5E2 0
-stringtext2 682 689 STRCODE 682 0
-text2 68A 6A3 CODE 68A 0
+stringtext2 682 68B STRCODE 682 0
+text2 68C 6A5 CODE 68C 0
 %locals
 dist/default/production\Device-0001_Clicker.X.production.o
-C:\Users\at4\AppData\Local\Temp\sevk.s
-4079 3C 0 CODE 0
-4082 3C 0 CODE 0
-4139 3C 0 CODE 0
-4140 3D 0 CODE 0
-4141 3E 0 CODE 0
-4142 3F 0 CODE 0
-4143 40 0 CODE 0
-4144 41 0 CODE 0
-4150 44 0 CODE 0
-4152 44 0 CODE 0
-4153 45 0 CODE 0
-4154 46 0 CODE 0
-4128 30B 0 CODE 0
+C:\Users\at4\AppData\Local\Temp\sli0.s
+4080 3C 0 CODE 0
+4083 3C 0 CODE 0
+4140 3C 0 CODE 0
+4141 3D 0 CODE 0
+4142 3E 0 CODE 0
+4143 3F 0 CODE 0
+4144 40 0 CODE 0
+4145 41 0 CODE 0
+4151 44 0 CODE 0
+4153 44 0 CODE 0
+4154 45 0 CODE 0
+4155 46 0 CODE 0
 4129 30B 0 CODE 0
-4130 30C 0 CODE 0
+4130 30B 0 CODE 0
 4131 30C 0 CODE 0
-4132 30D 0 CODE 0
-4133 30E 0 CODE 0
-4134 30F 0 CODE 0
-4135 310 0 CODE 0
+4132 30C 0 CODE 0
+4133 30D 0 CODE 0
+4134 30E 0 CODE 0
+4135 30F 0 CODE 0
+4136 310 0 CODE 0
 main.c
 50 2DC 0 CODE 0
 52 2DC 0 CODE 0
@@ -486,9 +486,9 @@ mcc_generated_files/mcc.c
 58 2B5 0 CODE 0
 59 2B8 0 CODE 0
 60 2BB 0 CODE 0
-74 345 0 CODE 0
-77 345 0 CODE 0
-78 348 0 CODE 0
+74 346 0 CODE 0
+77 346 0 CODE 0
+78 349 0 CODE 0
 mcc_generated_files/tmr2.c
 66 2BC 0 CODE 0
 71 2BC 0 CODE 0
@@ -709,14 +709,14 @@ mcc_generated_files/eusart.c
 242 1BF 0 CODE 0
 243 1C0 0 CODE 0
 247 1C3 0 CODE 0
-261 349 0 CODE 0
-264 349 0 CODE 0
-265 34B 0 CODE 0
-267 34C 0 CODE 0
-259 351 0 CODE 0
-269 34D 0 CODE 0
-270 34D 0 CODE 0
-271 350 0 CODE 0
+261 34A 0 CODE 0
+264 34A 0 CODE 0
+265 34C 0 CODE 0
+267 34D 0 CODE 0
+259 352 0 CODE 0
+269 34E 0 CODE 0
+270 34E 0 CODE 0
+271 351 0 CODE 0
 249 28C 0 CODE 0
 251 28C 0 CODE 0
 252 29A 0 CODE 0

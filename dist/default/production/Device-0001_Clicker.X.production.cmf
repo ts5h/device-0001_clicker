@@ -14,7 +14,7 @@
 $dist/default/production\Device-0001_Clicker.X.production.o
 cinit CODE 0 3C 3C C 2
 text1 CODE 0 2A6 2A6 16 2
-text2 CODE 0 345 345 4 2
+text2 CODE 0 346 346 4 2
 text3 CODE 0 2BC 2BC 13 2
 text4 CODE 0 311 311 6 2
 text5 CODE 0 2F1 2F1 9 2
@@ -37,21 +37,21 @@ text22 CODE 0 1C4 1C4 34 2
 text23 CODE 0 14E 14E 3C 2
 text24 CODE 0 249 249 22 2
 text25 CODE 0 18A 18A 3A 2
-text26 CODE 0 349 349 4 2
-text27 CODE 0 351 351 1 2
-text28 CODE 0 34D 34D 4 2
+text26 CODE 0 34A 34A 4 2
+text27 CODE 0 352 352 1 2
+text28 CODE 0 34E 34E 4 2
 text29 CODE 0 28C 28C 1A 2
 nvBANK0 BANK0 1 55 55 D 1
 maintext CODE 0 2DC 2DC B 2
 cstackCOMMON COMMON 1 70 70 E 1
 cstackBANK0 BANK0 1 44 44 11 1
 stringtext1 STRCODE 0 2E7 2E7 A 2
-stringtext2 STRCODE 0 341 341 4 2
+stringtext2 STRCODE 0 341 341 5 2
 intentry CODE 0 4 4 36 2
 bssBANK0 BANK0 1 20 20 24 1
 clrtext CODE 0 30B 30B 6 2
 config CONFIG 4 8007 8007 2 2
-$C:\Users\at4\AppData\Local\Temp\sevk.o
+$C:\Users\at4\AppData\Local\Temp\sli0.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 3A 3A 2 2
 config CONFIG 4 8007 8007 2 2
@@ -85,9 +85,9 @@ BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
 CONST 2-3 2
-CONST 352-1FFF 2
+CONST 353-1FFF 2
 ENTRY 2-3 2
-ENTRY 352-1FFF 2
+ENTRY 353-1FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
 SFR11 580-59F 1
@@ -113,7 +113,7 @@ SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 2042-23EF 1
 CODE 2-3 2
-CODE 352-1FFF 2
+CODE 353-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -129,9 +129,9 @@ BANK11 5A0-5EF 1
 BANK12 620-64F 1
 BIGRAM 2000-23EF 1
 STRCODE 2-3 2
-STRCODE 352-1FFF 2
+STRCODE 353-1FFF 2
 STRING 2-3 2
-STRING 352-1FFF 2
+STRING 353-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -146,18 +146,18 @@ STRING 352-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Device-0001_Clicker.X.production.o
-3C cinit CODE >4079:C:\Users\at4\AppData\Local\Temp\sevk.s
-3C cinit CODE >4082:C:\Users\at4\AppData\Local\Temp\sevk.s
-3C cinit CODE >4139:C:\Users\at4\AppData\Local\Temp\sevk.s
-3D cinit CODE >4140:C:\Users\at4\AppData\Local\Temp\sevk.s
-3E cinit CODE >4141:C:\Users\at4\AppData\Local\Temp\sevk.s
-3F cinit CODE >4142:C:\Users\at4\AppData\Local\Temp\sevk.s
-40 cinit CODE >4143:C:\Users\at4\AppData\Local\Temp\sevk.s
-41 cinit CODE >4144:C:\Users\at4\AppData\Local\Temp\sevk.s
-44 cinit CODE >4150:C:\Users\at4\AppData\Local\Temp\sevk.s
-44 cinit CODE >4152:C:\Users\at4\AppData\Local\Temp\sevk.s
-45 cinit CODE >4153:C:\Users\at4\AppData\Local\Temp\sevk.s
-46 cinit CODE >4154:C:\Users\at4\AppData\Local\Temp\sevk.s
+3C cinit CODE >4080:C:\Users\at4\AppData\Local\Temp\sli0.s
+3C cinit CODE >4083:C:\Users\at4\AppData\Local\Temp\sli0.s
+3C cinit CODE >4140:C:\Users\at4\AppData\Local\Temp\sli0.s
+3D cinit CODE >4141:C:\Users\at4\AppData\Local\Temp\sli0.s
+3E cinit CODE >4142:C:\Users\at4\AppData\Local\Temp\sli0.s
+3F cinit CODE >4143:C:\Users\at4\AppData\Local\Temp\sli0.s
+40 cinit CODE >4144:C:\Users\at4\AppData\Local\Temp\sli0.s
+41 cinit CODE >4145:C:\Users\at4\AppData\Local\Temp\sli0.s
+44 cinit CODE >4151:C:\Users\at4\AppData\Local\Temp\sli0.s
+44 cinit CODE >4153:C:\Users\at4\AppData\Local\Temp\sli0.s
+45 cinit CODE >4154:C:\Users\at4\AppData\Local\Temp\sli0.s
+46 cinit CODE >4155:C:\Users\at4\AppData\Local\Temp\sli0.s
 4 intentry CODE >52:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/interrupt_manager.c
 6 intentry CODE >55:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/interrupt_manager.c
 A intentry CODE >57:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/interrupt_manager.c
@@ -177,14 +177,14 @@ A intentry CODE >57:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_genera
 2A0 text29 CODE >254:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
 2A1 text29 CODE >256:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
 2A5 text29 CODE >257:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
-34D text28 CODE >269:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
-34D text28 CODE >270:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
-350 text28 CODE >271:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
-351 text27 CODE >259:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
-349 text26 CODE >261:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
-349 text26 CODE >264:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
-34B text26 CODE >265:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
-34C text26 CODE >267:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
+34E text28 CODE >269:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
+34E text28 CODE >270:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
+351 text28 CODE >271:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
+352 text27 CODE >259:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
+34A text26 CODE >261:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
+34A text26 CODE >264:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
+34C text26 CODE >265:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
+34D text26 CODE >267:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
 18A text25 CODE >225:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
 18A text25 CODE >228:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
 190 text25 CODE >230:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/eusart.c
@@ -379,9 +379,9 @@ F4 text19 CODE >553:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\
 2C3 text3 CODE >83:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/tmr2.c
 2CB text3 CODE >86:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/tmr2.c
 2CE text3 CODE >87:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/tmr2.c
-345 text2 CODE >74:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/mcc.c
-345 text2 CODE >77:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/mcc.c
-348 text2 CODE >78:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/mcc.c
+346 text2 CODE >74:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/mcc.c
+346 text2 CODE >77:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/mcc.c
+349 text2 CODE >78:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/mcc.c
 2A6 text1 CODE >50:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/mcc.c
 2A6 text1 CODE >53:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/mcc.c
 2A9 text1 CODE >54:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\mcc_generated_files/mcc.c
@@ -399,14 +399,14 @@ F4 text19 CODE >553:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\
 2E3 maintext CODE >66:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\main.c
 2E4 maintext CODE >74:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\main.c
 2E4 maintext CODE >77:C:\Users\at4\MPLABXProjects\Device-0001_Clicker.X\main.c
-30B clrtext CODE >4128:C:\Users\at4\AppData\Local\Temp\sevk.s
-30B clrtext CODE >4129:C:\Users\at4\AppData\Local\Temp\sevk.s
-30C clrtext CODE >4130:C:\Users\at4\AppData\Local\Temp\sevk.s
-30C clrtext CODE >4131:C:\Users\at4\AppData\Local\Temp\sevk.s
-30D clrtext CODE >4132:C:\Users\at4\AppData\Local\Temp\sevk.s
-30E clrtext CODE >4133:C:\Users\at4\AppData\Local\Temp\sevk.s
-30F clrtext CODE >4134:C:\Users\at4\AppData\Local\Temp\sevk.s
-310 clrtext CODE >4135:C:\Users\at4\AppData\Local\Temp\sevk.s
+30B clrtext CODE >4129:C:\Users\at4\AppData\Local\Temp\sli0.s
+30B clrtext CODE >4130:C:\Users\at4\AppData\Local\Temp\sli0.s
+30C clrtext CODE >4131:C:\Users\at4\AppData\Local\Temp\sli0.s
+30C clrtext CODE >4132:C:\Users\at4\AppData\Local\Temp\sli0.s
+30D clrtext CODE >4133:C:\Users\at4\AppData\Local\Temp\sli0.s
+30E clrtext CODE >4134:C:\Users\at4\AppData\Local\Temp\sli0.s
+30F clrtext CODE >4135:C:\Users\at4\AppData\Local\Temp\sli0.s
+310 clrtext CODE >4136:C:\Users\at4\AppData\Local\Temp\sli0.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -421,14 +421,14 @@ F4 text19 CODE >553:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 ___lwmod@counter 7D 0 COMMON 1 cstackCOMMON dist/default/production\Device-0001_Clicker.X.production.o
-__Hspace_0 352 0 ABS 0 - -
+__Hspace_0 353 0 ABS 0 - -
 __Hspace_1 7E 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 10010 0 ABS 0 - -
 __end_of_PWM1_Initialize 5F4 0 CODE 0 text5 dist/default/production\Device-0001_Clicker.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-__end_of_WDT_Initialize 692 0 CODE 0 text2 dist/default/production\Device-0001_Clicker.X.production.o
+__end_of_WDT_Initialize 694 0 CODE 0 text2 dist/default/production\Device-0001_Clicker.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _EUSART_RxDefaultInterruptHandler 5B 0 BANK0 1 nvBANK0 dist/default/production\Device-0001_Clicker.X.production.o
 _LATA 10C 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
@@ -436,10 +436,10 @@ _LATC 10E 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 _TMR2 1A 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 _WPUA 20C 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 _WPUC 20E 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\at4\AppData\Local\Temp\sevk.o
+___sp 0 0 STACK 2 stack C:\Users\at4\AppData\Local\Temp\sli0.o
 _main 5B8 0 CODE 0 maintext dist/default/production\Device-0001_Clicker.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
-start 74 0 CODE 0 init C:\Users\at4\AppData\Local\Temp\sevk.o
+start 74 0 CODE 0 init C:\Users\at4\AppData\Local\Temp\sli0.o
 _EUSART_Write 3F0 0 CODE 0 text21 dist/default/production\Device-0001_Clicker.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 __size_of___lwdiv 0 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
@@ -453,19 +453,19 @@ printf@c 51 0 BANK0 1 cstackBANK0 dist/default/production\Device-0001_Clicker.X.
 printf@f 44 0 BANK0 1 cstackBANK0 dist/default/production\Device-0001_Clicker.X.production.o
 _TMR2_Initialize 578 0 CODE 0 text3 dist/default/production\Device-0001_Clicker.X.production.o
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\at4\AppData\Local\Temp\sevk.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\at4\AppData\Local\Temp\sevk.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\at4\AppData\Local\Temp\sevk.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\at4\AppData\Local\Temp\sevk.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\at4\AppData\Local\Temp\sevk.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\at4\AppData\Local\Temp\sevk.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\at4\AppData\Local\Temp\sli0.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\at4\AppData\Local\Temp\sli0.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\at4\AppData\Local\Temp\sli0.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\at4\AppData\Local\Temp\sli0.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\at4\AppData\Local\Temp\sli0.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\at4\AppData\Local\Temp\sli0.o
 _PWM1_Initialize 5E2 0 CODE 0 text5 dist/default/production\Device-0001_Clicker.X.production.o
 __size_of_ADC_Initialize 0 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 _RC1STAbits 19D 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
-_EUSART_DefaultFramingErrorHandler 6A2 0 CODE 0 text27 dist/default/production\Device-0001_Clicker.X.production.o
-_EUSART_DefaultOverrunErrorHandler 692 0 CODE 0 text26 dist/default/production\Device-0001_Clicker.X.production.o
+_EUSART_DefaultFramingErrorHandler 6A4 0 CODE 0 text27 dist/default/production\Device-0001_Clicker.X.production.o
+_EUSART_DefaultOverrunErrorHandler 694 0 CODE 0 text26 dist/default/production\Device-0001_Clicker.X.production.o
 __size_of_EUSART_Write 0 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 __end_of_EUSART_Transmit_ISR 4D6 0 CODE 0 text24 dist/default/production\Device-0001_Clicker.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
@@ -493,8 +493,8 @@ __end_of___lwdiv 314 0 CODE 0 text23 dist/default/production\Device-0001_Clicker
 __end_of___lwmod 3F0 0 CODE 0 text22 dist/default/production\Device-0001_Clicker.X.production.o
 _INLVLA 38C 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 _INLVLC 38E 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
-___stackhi 23EF 0 ABS 0 - C:\Users\at4\AppData\Local\Temp\sevk.o
-___stacklo 2042 0 ABS 0 - C:\Users\at4\AppData\Local\Temp\sevk.o
+___stackhi 23EF 0 ABS 0 - C:\Users\at4\AppData\Local\Temp\sli0.o
+___stacklo 2042 0 ABS 0 - C:\Users\at4\AppData\Local\Temp\sli0.o
 _dpowers 5CE 0 STRCODE 0 stringtext1 dist/default/production\Device-0001_Clicker.X.production.o
 _EUSART_Initialize 214 0 CODE 0 text8 dist/default/production\Device-0001_Clicker.X.production.o
 ___lwdiv@quotient 75 0 COMMON 1 cstackCOMMON dist/default/production\Device-0001_Clicker.X.production.o
@@ -512,7 +512,7 @@ _OSCCON 99 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 __size_of_PWM1_Initialize 0 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 EUSART_SetOverrunErrorHandler@interruptHandler 52 0 BANK0 1 cstackBANK0 dist/default/production\Device-0001_Clicker.X.production.o
 _eusartRxBuffer 28 0 BANK0 1 bssBANK0 dist/default/production\Device-0001_Clicker.X.production.o
-__end_of_EUSART_DefaultErrorHandler 6A2 0 CODE 0 text28 dist/default/production\Device-0001_Clicker.X.production.o
+__end_of_EUSART_DefaultErrorHandler 6A4 0 CODE 0 text28 dist/default/production\Device-0001_Clicker.X.production.o
 _EUSART_RxDataHandler 518 0 CODE 0 text29 dist/default/production\Device-0001_Clicker.X.production.o
 _RC1PPS EA1 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 _RC1REG 199 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
@@ -525,13 +525,13 @@ clear_ram0 616 0 CODE 0 clrtext dist/default/production\Device-0001_Clicker.X.pr
 __pcstackBANK0 44 0 BANK0 1 cstackBANK0 dist/default/production\Device-0001_Clicker.X.production.o
 _TX1REG 19A 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 _TX1STA 19E 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
-__end_of_EUSART_DefaultFramingErrorHandler 6A4 0 CODE 0 text27 dist/default/production\Device-0001_Clicker.X.production.o
-__end_of_EUSART_DefaultOverrunErrorHandler 69A 0 CODE 0 text26 dist/default/production\Device-0001_Clicker.X.production.o
+__end_of_EUSART_DefaultFramingErrorHandler 6A6 0 CODE 0 text27 dist/default/production\Device-0001_Clicker.X.production.o
+__end_of_EUSART_DefaultOverrunErrorHandler 69C 0 CODE 0 text26 dist/default/production\Device-0001_Clicker.X.production.o
 __end_of_printf 214 0 CODE 0 text19 dist/default/production\Device-0001_Clicker.X.production.o
 TMR2_SetInterruptHandler@InterruptHandler 52 0 BANK0 1 cstackBANK0 dist/default/production\Device-0001_Clicker.X.production.o
 _WDTCON 97 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 _EUSART_TxDefaultInterruptHandler 5D 0 BANK0 1 nvBANK0 dist/default/production\Device-0001_Clicker.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\at4\AppData\Local\Temp\sevk.o
+___int_sp 0 0 STACK 2 stack C:\Users\at4\AppData\Local\Temp\sli0.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -669,7 +669,7 @@ __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 __size_of_WDT_Initialize 0 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 _PR2 1B 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
-__S0 352 0 ABS 0 - -
+__S0 353 0 ABS 0 - -
 __S1 7E 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 _cnt 3C 0 BANK0 1 bssBANK0 dist/default/production\Device-0001_Clicker.X.production.o
@@ -683,7 +683,7 @@ _TMR2_DefaultInterruptHandler 4D6 0 CODE 0 text18 dist/default/production\Device
 _TMR2_CallBack 59E 0 CODE 0 text17 dist/default/production\Device-0001_Clicker.X.production.o
 __HnvBANK0 0 0 ABS 0 nvBANK0 -
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\at4\AppData\Local\Temp\sevk.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\at4\AppData\Local\Temp\sli0.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __Lstringtext1 0 0 ABS 0 stringtext1 -
 __Lstringtext2 0 0 ABS 0 stringtext2 -
@@ -709,9 +709,9 @@ __ptext22 388 0 CODE 0 text22 dist/default/production\Device-0001_Clicker.X.prod
 __ptext23 29C 0 CODE 0 text23 dist/default/production\Device-0001_Clicker.X.production.o
 __ptext24 492 0 CODE 0 text24 dist/default/production\Device-0001_Clicker.X.production.o
 __ptext25 314 0 CODE 0 text25 dist/default/production\Device-0001_Clicker.X.production.o
-__ptext26 692 0 CODE 0 text26 dist/default/production\Device-0001_Clicker.X.production.o
-__ptext27 6A2 0 CODE 0 text27 dist/default/production\Device-0001_Clicker.X.production.o
-__ptext28 69A 0 CODE 0 text28 dist/default/production\Device-0001_Clicker.X.production.o
+__ptext26 694 0 CODE 0 text26 dist/default/production\Device-0001_Clicker.X.production.o
+__ptext27 6A4 0 CODE 0 text27 dist/default/production\Device-0001_Clicker.X.production.o
+__ptext28 69C 0 CODE 0 text28 dist/default/production\Device-0001_Clicker.X.production.o
 __ptext29 518 0 CODE 0 text29 dist/default/production\Device-0001_Clicker.X.production.o
 __size_of_EUSART_DefaultErrorHandler 0 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 _EUSART_Receive_ISR 314 0 CODE 0 text25 dist/default/production\Device-0001_Clicker.X.production.o
@@ -766,7 +766,7 @@ EUSART_SetTxInterruptHandler@interruptHandler 52 0 BANK0 1 cstackBANK0 dist/defa
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 _PIR1bits 11 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 __Lend_init 74 0 CODE 0 end_init -
-_EUSART_DefaultErrorHandler 69A 0 CODE 0 text28 dist/default/production\Device-0001_Clicker.X.production.o
+_EUSART_DefaultErrorHandler 69C 0 CODE 0 text28 dist/default/production\Device-0001_Clicker.X.production.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 printf@ap 4C 0 BANK0 1 cstackBANK0 dist/default/production\Device-0001_Clicker.X.production.o
 _EUSART_SetFramingErrorHandler 652 0 CODE 0 text12 dist/default/production\Device-0001_Clicker.X.production.o
@@ -783,7 +783,7 @@ __size_of_TMR2_CallBack 0 0 ABS 0 - dist/default/production\Device-0001_Clicker.
 __Hreset_vec 4 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __ptext1 54C 0 CODE 0 text1 dist/default/production\Device-0001_Clicker.X.production.o
-__ptext2 68A 0 CODE 0 text2 dist/default/production\Device-0001_Clicker.X.production.o
+__ptext2 68C 0 CODE 0 text2 dist/default/production\Device-0001_Clicker.X.production.o
 __ptext3 578 0 CODE 0 text3 dist/default/production\Device-0001_Clicker.X.production.o
 __ptext4 622 0 CODE 0 text4 dist/default/production\Device-0001_Clicker.X.production.o
 __ptext5 5E2 0 CODE 0 text5 dist/default/production\Device-0001_Clicker.X.production.o
@@ -837,7 +837,7 @@ _TMR2_InterruptHandler 5F 0 BANK0 1 nvBANK0 dist/default/production\Device-0001_
 _putch 676 0 CODE 0 text20 dist/default/production\Device-0001_Clicker.X.production.o
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 _eusartRxLastError 3E 0 BANK0 1 bssBANK0 dist/default/production\Device-0001_Clicker.X.production.o
-_WDT_Initialize 68A 0 CODE 0 text2 dist/default/production\Device-0001_Clicker.X.production.o
+_WDT_Initialize 68C 0 CODE 0 text2 dist/default/production\Device-0001_Clicker.X.production.o
 _CCP1CON 293 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\Device-0001_Clicker.X.production.o
 __size_of_EUSART_SetErrorHandler 0 0 ABS 0 - dist/default/production\Device-0001_Clicker.X.production.o
@@ -880,11 +880,11 @@ __end_of_TMR2_Initialize 59E 0 CODE 0 text3 dist/default/production\Device-0001_
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text2 0 345 68A D 2
+text2 0 346 68C D 2
 text5 0 2F1 5E2 50 2
 cstackCOMMON 1 70 70 E 1
 stringtext1 0 2E7 5CE A 2
-stringtext2 0 341 682 4 2
+stringtext2 0 341 682 5 2
 intentry 0 4 8 2E3 2
 reset_vec 0 0 0 2 2
 bssBANK0 1 20 20 42 1

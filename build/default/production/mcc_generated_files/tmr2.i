@@ -7311,8 +7311,8 @@ void TMR2_DefaultInterruptHandler(void){
 
 cnt++;
 
-if (cnt >= 400) {
-printf("%d\n", sec);
+if (cnt >= 100) {
+printf("%d\r\n", sec);
 sec++;
 cnt = 0;
 }

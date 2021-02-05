@@ -4966,11 +4966,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr2.c: 155: cnt++;
 "155
 [e ++ _cnt -> -> 1 `i `ui ]
-[; ;tmr2.c: 157: if (cnt >= 400) {
+[; ;tmr2.c: 157: if (cnt >= 100) {
 "157
-[e $ ! >= _cnt -> -> 400 `i `ui 598  ]
+[e $ ! >= _cnt -> -> 100 `i `ui 598  ]
 {
-[; ;tmr2.c: 158: printf("%d\n", sec);
+[; ;tmr2.c: 158: printf("%d\r\n", sec);
 "158
 [e ( _printf , (. :s 1C _sec ]
 [; ;tmr2.c: 159: sec++;
@@ -4988,5 +4988,5 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 597 ]
 }
 [p f _printf 8388736 ]
-[a 1C 37 100 10 0 ]
+[a 1C 37 100 13 10 0 ]
 
