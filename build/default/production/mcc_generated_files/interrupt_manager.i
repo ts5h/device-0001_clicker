@@ -7031,10 +7031,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 287 "mcc_generated_files/pin_manager.h"
+# 279 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 299
+# 291
 void PIN_MANAGER_IOC(void);
 
 # 13 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdint.h"
@@ -7173,8 +7173,20 @@ void TMR2_WriteTimer(uint8_t timerVal);
 # 290
 void TMR2_LoadPeriodRegister(uint8_t periodVal);
 
-# 325
-bool TMR2_HasOverflowOccured(void);
+# 308
+void TMR2_ISR(void);
+
+# 326
+void TMR2_CallBack(void);
+
+# 343
+void TMR2_SetInterruptHandler(void (* InterruptHandler)(void));
+
+# 361
+extern void (*TMR2_InterruptHandler)(void);
+
+# 379
+void TMR2_DefaultInterruptHandler(void);
 
 # 15 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
@@ -7192,7 +7204,6 @@ adc_result_t adcResult2;
 # 95
 typedef enum
 {
-O_RA0 = 0x0,
 Cds_IN = 0x2,
 channel_FVRBuffer2 = 0x1C,
 channel_Temp = 0x1D,
@@ -7200,25 +7211,25 @@ channel_DAC = 0x1E,
 channel_FVRBuffer1 = 0x1F
 } adc_channel_t;
 
-# 138
+# 137
 void ADC_Initialize(void);
 
-# 168
+# 167
 void ADC_SelectChannel(adc_channel_t channel);
 
-# 195
+# 194
 void ADC_StartConversion(void);
 
-# 227
+# 226
 bool ADC_IsConversionDone(void);
 
-# 260
+# 259
 adc_result_t ADC_GetConversionResult(void);
 
-# 290
+# 289
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 
-# 318
+# 317
 void ADC_TemperatureAcquisitionDelay(void);
 
 # 15 "C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdbool.h"
@@ -7356,6 +7367,10 @@ EUSART_TxDefaultInterruptHandler();
 else if(PIE1bits.RCIE == 1 && PIR1bits.RCIF == 1)
 {
 EUSART_RxDefaultInterruptHandler();
+}
+else if(PIE1bits.TMR2IE == 1 && PIR1bits.TMR2IF == 1)
+{
+TMR2_ISR();
 }
 else
 {

@@ -7133,7 +7133,6 @@ adc_result_t adcResult2;
 # 95
 typedef enum
 {
-O_RA0 = 0x0,
 Cds_IN = 0x2,
 channel_FVRBuffer2 = 0x1C,
 channel_Temp = 0x1D,
@@ -7141,25 +7140,25 @@ channel_DAC = 0x1E,
 channel_FVRBuffer1 = 0x1F
 } adc_channel_t;
 
-# 138
+# 137
 void ADC_Initialize(void);
 
-# 168
+# 167
 void ADC_SelectChannel(adc_channel_t channel);
 
-# 195
+# 194
 void ADC_StartConversion(void);
 
-# 227
+# 226
 bool ADC_IsConversionDone(void);
 
-# 260
+# 259
 adc_result_t ADC_GetConversionResult(void);
 
-# 290
+# 289
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 
-# 318
+# 317
 void ADC_TemperatureAcquisitionDelay(void);
 
 # 61 "mcc_generated_files/adc.c"
@@ -7171,7 +7170,7 @@ void ADC_Initialize(void)
 
 
 
-ADCON1 = 0x12;
+ADCON1 = 0x42;
 
 
 ADCON2 = 0x00;
@@ -7223,7 +7222,7 @@ ADCON0bits.CHS = channel;
 ADCON0bits.ADON = 1;
 
 
-_delay((unsigned long)((5)*(8000000/4000000.0)));
+_delay((unsigned long)((5)*(4000000/4000000.0)));
 
 
 ADCON0bits.GO_nDONE = 1;
@@ -7239,6 +7238,6 @@ return ((adc_result_t)((ADRESH << 8) + ADRESL));
 
 void ADC_TemperatureAcquisitionDelay(void)
 {
-_delay((unsigned long)((200)*(8000000/4000000.0)));
+_delay((unsigned long)((200)*(4000000/4000000.0)));
 }
 

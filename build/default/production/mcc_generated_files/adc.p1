@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F4017 `(v ~T0 @X0 0 tf ]
+[v F4016 `(v ~T0 @X0 0 tf ]
 "1808 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1705.h
 [v _ADCON1 `Vuc ~T0 @X0 0 e@158 ]
 "1861
@@ -11,8 +11,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "1728
 [v _ADCON0 `Vuc ~T0 @X0 0 e@157 ]
 "89 mcc_generated_files/adc.c
-[c E3994 0 2 28 29 30 31 .. ]
-[n E3994 . O_RA0 Cds_IN channel_FVRBuffer2 channel_Temp channel_DAC channel_FVRBuffer1  ]
+[c E3994 2 28 29 30 31 .. ]
+[n E3994 . Cds_IN channel_FVRBuffer2 channel_Temp channel_DAC channel_FVRBuffer1  ]
 "1734 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1705.h
 [s S90 :1 `uc 1 :1 `uc 1 :5 `uc 1 ]
 [n S90 . ADON GO_nDONE CHS ]
@@ -4716,22 +4716,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.h: 81: } adc_sync_double_result_t;
 [; ;adc.h: 95: typedef enum
 [; ;adc.h: 96: {
-[; ;adc.h: 97: O_RA0 = 0x0,
-[; ;adc.h: 98: Cds_IN = 0x2,
-[; ;adc.h: 99: channel_FVRBuffer2 = 0x1C,
-[; ;adc.h: 100: channel_Temp = 0x1D,
-[; ;adc.h: 101: channel_DAC = 0x1E,
-[; ;adc.h: 102: channel_FVRBuffer1 = 0x1F
-[; ;adc.h: 103: } adc_channel_t;
-[; ;adc.h: 138: void ADC_Initialize(void);
-[; ;adc.h: 168: void ADC_SelectChannel(adc_channel_t channel);
-[; ;adc.h: 195: void ADC_StartConversion(void);
-[; ;adc.h: 227: bool ADC_IsConversionDone(void);
-[; ;adc.h: 260: adc_result_t ADC_GetConversionResult(void);
-[; ;adc.h: 290: adc_result_t ADC_GetConversion(adc_channel_t channel);
-[; ;adc.h: 318: void ADC_TemperatureAcquisitionDelay(void);
+[; ;adc.h: 97: Cds_IN = 0x2,
+[; ;adc.h: 98: channel_FVRBuffer2 = 0x1C,
+[; ;adc.h: 99: channel_Temp = 0x1D,
+[; ;adc.h: 100: channel_DAC = 0x1E,
+[; ;adc.h: 101: channel_FVRBuffer1 = 0x1F
+[; ;adc.h: 102: } adc_channel_t;
+[; ;adc.h: 137: void ADC_Initialize(void);
+[; ;adc.h: 167: void ADC_SelectChannel(adc_channel_t channel);
+[; ;adc.h: 194: void ADC_StartConversion(void);
+[; ;adc.h: 226: bool ADC_IsConversionDone(void);
+[; ;adc.h: 259: adc_result_t ADC_GetConversionResult(void);
+[; ;adc.h: 289: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[; ;adc.h: 317: void ADC_TemperatureAcquisitionDelay(void);
 "61 mcc_generated_files/adc.c
-[v _ADC_InterruptHandler `*F4017 ~T0 @X0 1 e ]
+[v _ADC_InterruptHandler `*F4016 ~T0 @X0 1 e ]
 [; ;adc.c: 61: void (*ADC_InterruptHandler)(void);
 "67
 [v _ADC_Initialize `(v ~T0 @X0 1 ef ]
@@ -4741,9 +4740,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.c: 68: {
 [e :U _ADC_Initialize ]
 [f ]
-[; ;adc.c: 72: ADCON1 = 0x12;
+[; ;adc.c: 72: ADCON1 = 0x42;
 "72
-[e = _ADCON1 -> -> 18 `i `uc ]
+[e = _ADCON1 -> -> 66 `i `uc ]
 [; ;adc.c: 75: ADCON2 = 0x00;
 "75
 [e = _ADCON2 -> -> 0 `i `uc ]
@@ -4845,9 +4844,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.c: 121: ADCON0bits.ADON = 1;
 "121
 [e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-[; ;adc.c: 124: _delay((unsigned long)((5)*(8000000/4000000.0)));
+[; ;adc.c: 124: _delay((unsigned long)((5)*(4000000/4000000.0)));
 "124
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 [; ;adc.c: 127: ADCON0bits.GO_nDONE = 1;
 "127
 [e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
@@ -4881,9 +4880,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.c: 139: {
 [e :U _ADC_TemperatureAcquisitionDelay ]
 [f ]
-[; ;adc.c: 140: _delay((unsigned long)((200)*(8000000/4000000.0)));
+[; ;adc.c: 140: _delay((unsigned long)((200)*(4000000/4000000.0)));
 "140
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 [; ;adc.c: 141: }
 "141
 [e :UE 596 ]

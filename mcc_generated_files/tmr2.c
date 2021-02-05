@@ -51,6 +51,8 @@
 #include <xc.h>
 #include "tmr2.h"
 
+#include <stdio.h>
+
 /**
   Section: Global Variables Definitions
 */
@@ -65,8 +67,8 @@ void TMR2_Initialize(void)
 {
     // Set TMR2 to the options selected in the User Interface
 
-    // PR2 249; 
-    PR2 = 0xF9;
+    // PR2 38; 
+    PR2 = 0x26;
 
     // TMR2 0; 
     TMR2 = 0x00;
@@ -80,8 +82,8 @@ void TMR2_Initialize(void)
     // Set Default Interrupt Handler
     TMR2_SetInterruptHandler(TMR2_DefaultInterruptHandler);
 
-    // T2CKPS 1:4; T2OUTPS 1:1; TMR2ON on; 
-    T2CON = 0x05;
+    // T2CKPS 1:64; T2OUTPS 1:4; TMR2ON on; 
+    T2CON = 0x1F;
 }
 
 void TMR2_StartTimer(void)
@@ -122,20 +124,41 @@ void TMR2_ISR(void)
     // clear the TMR2 interrupt flag
     PIR1bits.TMR2IF = 0;
 
+    // ticker function call;
+    // ticker is 1 -> Callback function gets called everytime this ISR executes
+    TMR2_CallBack();
+}
+
+void TMR2_CallBack(void)
+{
+    // Add your custom callback code here
+    // this code executes every TMR2_INTERRUPT_TICKER_FACTOR periods of TMR2
     if(TMR2_InterruptHandler)
     {
         TMR2_InterruptHandler();
     }
 }
 
-
 void TMR2_SetInterruptHandler(void (* InterruptHandler)(void)){
     TMR2_InterruptHandler = InterruptHandler;
 }
 
+
+unsigned int cnt = 0;
+unsigned int sec = 0;
+
+// Every nearly 2.5ms
 void TMR2_DefaultInterruptHandler(void){
     // add your TMR2 interrupt custom code
     // or set custom function using TMR2_SetInterruptHandler()
+    
+    cnt++;
+    
+    if (cnt >= 400) {
+        printf("%d\n", sec);
+        sec++;
+        cnt = 0;
+    }
 }
 
 /**
