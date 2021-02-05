@@ -1,2 +1,9 @@
-nbproject/private/
 *.bak
+
+debug/
+build/
+dist/
+
+nbproject/Makefile-*
+nbproject/Package-*
+nbproject/private/
