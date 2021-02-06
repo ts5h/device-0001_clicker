@@ -48,7 +48,15 @@
                          Main application
  */
 
-// Like Arduino map()
+/**
+ * Like Arduino map()
+ * @param targetNum
+ * @param inMin
+ * @param inMax
+ * @param outMin
+ * @param outMax
+ * @return 
+ */
 int map(int targetNum, int inMin, int inMax, int outMin, int outMax)
 {
     int inDiff = inMax - targetNum;
@@ -62,6 +70,21 @@ int map(int targetNum, int inMin, int inMax, int outMin, int outMax)
  
     return outMax - outDiff;
 }
+
+
+/**
+ * Variable Delay
+ * @param milliseconds
+ */
+void delay_ms(unsigned int milliseconds)
+{
+    while(milliseconds > 0)
+    {
+        __delay_ms(1);
+        milliseconds--;
+    }
+}
+
 
 void main(void)
 {
@@ -105,7 +128,7 @@ void main(void)
         delay = delayMax + delayMin - map(val, minLimit, maxLimit, delayMin, delayMax);
         printf("%d, %d\r\n", val, delay);
         
-        __delay_ms(delay);
+        delay_ms(delay);
     }
 }
 /**
