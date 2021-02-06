@@ -44,9 +44,6 @@
 #include "mcc_generated_files/mcc.h"
 #include <stdio.h>
 
-/*
-                         Main application
- */
 
 /**
  * Like Arduino map()
@@ -73,7 +70,7 @@ int map(int targetNum, int inMin, int inMax, int outMin, int outMax)
 
 
 /**
- * Variable Delay
+ * Variable Milliseconds Delay
  * @param milliseconds
  */
 void delay_ms(unsigned int milliseconds)
@@ -86,6 +83,9 @@ void delay_ms(unsigned int milliseconds)
 }
 
 
+/*
+                         Main application
+ */
 void main(void)
 {
     TXSTAbits.TXEN = 1;
@@ -99,10 +99,10 @@ void main(void)
     // Use the following macros to:
 
     // Enable the Global Interrupts
-    INTERRUPT_GlobalInterruptEnable();
+    //INTERRUPT_GlobalInterruptEnable();
 
     // Enable the Peripheral Interrupts
-    INTERRUPT_PeripheralInterruptEnable();
+    //INTERRUPT_PeripheralInterruptEnable();
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
@@ -111,26 +111,27 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
     
     adc_result_t val;
-    unsigned int minLimit = 90;
-    unsigned int maxLimit = 150;
+    int minLimit = 90;
+    int maxLimit = 150;
     
-    unsigned int delayMin = 50;
-    unsigned int delayMax = 1000;
+    int delayMin = 50;
+    int delayMax = 1000;
     unsigned int delay = 0;
 
     while (1)
     {
         // Add your application code
         val = ADC_GetConversion(CDS_IN);
-        if (val < minLimit) val = minLimit;
-        if (val > maxLimit) val = maxLimit;
+        if (val < minLimit) val = (adc_result_t)minLimit;
+        if (val > maxLimit) val = (adc_result_t)maxLimit;
         
-        delay = delayMax + delayMin - map(val, minLimit, maxLimit, delayMin, delayMax);
+        delay = (unsigned int)(delayMax + delayMin - map((int)val, minLimit, maxLimit, delayMin, delayMax));
         printf("%d, %d\r\n", val, delay);
         
         delay_ms(delay);
     }
 }
+
 /**
  End of File
 */
