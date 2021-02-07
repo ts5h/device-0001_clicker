@@ -182,37 +182,37 @@
 #define IO_RC0_SetAnalogMode()      do { ANSELCbits.ANSC0 = 1; } while(0)
 #define IO_RC0_SetDigitalMode()     do { ANSELCbits.ANSC0 = 0; } while(0)
 
-// get/set RC1 procedures
-#define RC1_SetHigh()            do { LATCbits.LATC1 = 1; } while(0)
-#define RC1_SetLow()             do { LATCbits.LATC1 = 0; } while(0)
-#define RC1_Toggle()             do { LATCbits.LATC1 = ~LATCbits.LATC1; } while(0)
-#define RC1_GetValue()              PORTCbits.RC1
-#define RC1_SetDigitalInput()    do { TRISCbits.TRISC1 = 1; } while(0)
-#define RC1_SetDigitalOutput()   do { TRISCbits.TRISC1 = 0; } while(0)
-#define RC1_SetPullup()             do { WPUCbits.WPUC1 = 1; } while(0)
-#define RC1_ResetPullup()           do { WPUCbits.WPUC1 = 0; } while(0)
-#define RC1_SetAnalogMode()         do { ANSELCbits.ANSC1 = 1; } while(0)
-#define RC1_SetDigitalMode()        do { ANSELCbits.ANSC1 = 0; } while(0)
+// get/set IO_RC1 aliases
+#define IO_RC1_TRIS                 TRISCbits.TRISC1
+#define IO_RC1_LAT                  LATCbits.LATC1
+#define IO_RC1_PORT                 PORTCbits.RC1
+#define IO_RC1_WPU                  WPUCbits.WPUC1
+#define IO_RC1_OD                   ODCONCbits.ODC1
+#define IO_RC1_ANS                  ANSELCbits.ANSC1
+#define IO_RC1_SetHigh()            do { LATCbits.LATC1 = 1; } while(0)
+#define IO_RC1_SetLow()             do { LATCbits.LATC1 = 0; } while(0)
+#define IO_RC1_Toggle()             do { LATCbits.LATC1 = ~LATCbits.LATC1; } while(0)
+#define IO_RC1_GetValue()           PORTCbits.RC1
+#define IO_RC1_SetDigitalInput()    do { TRISCbits.TRISC1 = 1; } while(0)
+#define IO_RC1_SetDigitalOutput()   do { TRISCbits.TRISC1 = 0; } while(0)
+#define IO_RC1_SetPullup()          do { WPUCbits.WPUC1 = 1; } while(0)
+#define IO_RC1_ResetPullup()        do { WPUCbits.WPUC1 = 0; } while(0)
+#define IO_RC1_SetPushPull()        do { ODCONCbits.ODC1 = 0; } while(0)
+#define IO_RC1_SetOpenDrain()       do { ODCONCbits.ODC1 = 1; } while(0)
+#define IO_RC1_SetAnalogMode()      do { ANSELCbits.ANSC1 = 1; } while(0)
+#define IO_RC1_SetDigitalMode()     do { ANSELCbits.ANSC1 = 0; } while(0)
 
-// get/set IO_RC2 aliases
-#define IO_RC2_TRIS                 TRISCbits.TRISC2
-#define IO_RC2_LAT                  LATCbits.LATC2
-#define IO_RC2_PORT                 PORTCbits.RC2
-#define IO_RC2_WPU                  WPUCbits.WPUC2
-#define IO_RC2_OD                   ODCONCbits.ODC2
-#define IO_RC2_ANS                  ANSELCbits.ANSC2
-#define IO_RC2_SetHigh()            do { LATCbits.LATC2 = 1; } while(0)
-#define IO_RC2_SetLow()             do { LATCbits.LATC2 = 0; } while(0)
-#define IO_RC2_Toggle()             do { LATCbits.LATC2 = ~LATCbits.LATC2; } while(0)
-#define IO_RC2_GetValue()           PORTCbits.RC2
-#define IO_RC2_SetDigitalInput()    do { TRISCbits.TRISC2 = 1; } while(0)
-#define IO_RC2_SetDigitalOutput()   do { TRISCbits.TRISC2 = 0; } while(0)
-#define IO_RC2_SetPullup()          do { WPUCbits.WPUC2 = 1; } while(0)
-#define IO_RC2_ResetPullup()        do { WPUCbits.WPUC2 = 0; } while(0)
-#define IO_RC2_SetPushPull()        do { ODCONCbits.ODC2 = 0; } while(0)
-#define IO_RC2_SetOpenDrain()       do { ODCONCbits.ODC2 = 1; } while(0)
-#define IO_RC2_SetAnalogMode()      do { ANSELCbits.ANSC2 = 1; } while(0)
-#define IO_RC2_SetDigitalMode()     do { ANSELCbits.ANSC2 = 0; } while(0)
+// get/set RC2 procedures
+#define RC2_SetHigh()            do { LATCbits.LATC2 = 1; } while(0)
+#define RC2_SetLow()             do { LATCbits.LATC2 = 0; } while(0)
+#define RC2_Toggle()             do { LATCbits.LATC2 = ~LATCbits.LATC2; } while(0)
+#define RC2_GetValue()              PORTCbits.RC2
+#define RC2_SetDigitalInput()    do { TRISCbits.TRISC2 = 1; } while(0)
+#define RC2_SetDigitalOutput()   do { TRISCbits.TRISC2 = 0; } while(0)
+#define RC2_SetPullup()             do { WPUCbits.WPUC2 = 1; } while(0)
+#define RC2_ResetPullup()           do { WPUCbits.WPUC2 = 0; } while(0)
+#define RC2_SetAnalogMode()         do { ANSELCbits.ANSC2 = 1; } while(0)
+#define RC2_SetDigitalMode()        do { ANSELCbits.ANSC2 = 0; } while(0)
 
 // get/set IO_RC3 aliases
 #define IO_RC3_TRIS                 TRISCbits.TRISC3

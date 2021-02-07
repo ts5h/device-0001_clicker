@@ -99,10 +99,10 @@ void main(void)
     // Use the following macros to:
 
     // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_GlobalInterruptEnable();
 
     // Enable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
@@ -117,6 +117,8 @@ void main(void)
     int delayMin = 50;
     int delayMax = 1000;
     unsigned int delay = 0;
+    
+    int test = 0;
 
     while (1)
     {
@@ -126,9 +128,11 @@ void main(void)
         if (val > maxLimit) val = (adc_result_t)maxLimit;
         
         delay = (unsigned int)(delayMax + delayMin - map((int)val, minLimit, maxLimit, delayMin, delayMax));
-        printf("%d, %d\r\n", val, delay);
+        //printf("%d, %d\r\n", val, delay);
         
-        delay_ms(delay);
+        PWM3_LoadDutyValue(100);
+        test++;
+        delay_ms(1000);
     }
 }
 
