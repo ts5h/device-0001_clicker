@@ -43,7 +43,7 @@
 
 #include "mcc_generated_files/mcc.h"
 #include <stdio.h>
-
+#include <time.h>
 
 /**
  * Like Arduino map()
@@ -82,6 +82,19 @@ void delay_ms(unsigned int milliseconds)
     }
 }
 
+/**
+ * Variable Microseconds Delay
+ * @param microseconds
+ */
+void delay_us(unsigned int microseconds)
+{
+    while(microseconds > 0)
+    {
+        __delay_us(1);
+        microseconds--;
+    }
+}
+
 
 /*
                          Main application
@@ -110,29 +123,43 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
-    adc_result_t val;
-    int minLimit = 90;
-    int maxLimit = 150;
+    // PWM
+    int clickTime = 1;  // ms
+    PWM3_LoadDutyValue(0);
     
-    int delayMin = 50;
+    // Cds
+    adc_result_t val;
+    // 0 - 255
+    int minLimit = 90;
+    int maxLimit = 180;
+    
+    // Delay
+    int delayMin = 20;
     int delayMax = 1000;
     unsigned int delay = 0;
     
-    int test = 0;
-
+    // test
+    time_t toc;
+    time(&toc);
+    srand((int)toc);
+    
     while (1)
     {
         // Add your application code
+        // PWM
+        PWM3_LoadDutyValue(PWM3_INITIALIZE_DUTY_VALUE);
+        delay_ms(clickTime);
+        PWM3_LoadDutyValue(0);
+ 
+        // Set Delay
         val = ADC_GetConversion(CDS_IN);
         if (val < minLimit) val = (adc_result_t)minLimit;
         if (val > maxLimit) val = (adc_result_t)maxLimit;
         
         delay = (unsigned int)(delayMax + delayMin - map((int)val, minLimit, maxLimit, delayMin, delayMax));
-        //printf("%d, %d\r\n", val, delay);
-        
-        PWM3_LoadDutyValue(100);
-        test++;
-        delay_ms(1000);
+        printf("%d, %d\r\n", val, delay);
+
+        delay_ms(delay - clickTime);
     }
 }
 
