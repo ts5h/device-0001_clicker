@@ -97,6 +97,13 @@ void PIN_MANAGER_Initialize(void)
     INLVLA = 0x3F;
     INLVLC = 0x3F;
 	
+
+
+
+
+   
+    
+	
     RXPPS = 0x15;   //RC5->EUSART:RX;    
     RC4PPS = 0x14;   //RC4->EUSART:TX;    
     RC2PPS = 0x0E;   //RC2->PWM3:PWM3OUT;    

@@ -61,11 +61,11 @@
     // PWM3POL active_hi; PWM3EN enabled; 
     PWM3CON = 0x80;   
 
-    // PWM3DCH 24; 
-    PWM3DCH = 0x18;   
+    // PWM3DCH 31; 
+    PWM3DCH = 0x1F;   
 
-    // PWM3DCL 3; 
-    PWM3DCL = 0xC0;   
+    // PWM3DCL 1; 
+    PWM3DCL = 0x40;   
 
     // Select timer
     CCPTMRSbits.P3TSEL = 0;

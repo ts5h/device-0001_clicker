@@ -50,6 +50,7 @@
 
 #include <xc.h>
 #include "tmr2.h"
+#include "pwm3.h"
 
 /**
   Section: Global Variables Definitions
@@ -65,8 +66,8 @@ void TMR2_Initialize(void)
 {
     // Set TMR2 to the options selected in the User Interface
 
-    // PR2 49; 
-    PR2 = 0x31;
+    // PR2 62; 
+    PR2 = 0x3E;
 
     // TMR2 0; 
     TMR2 = 0x00;
@@ -80,8 +81,8 @@ void TMR2_Initialize(void)
     // Set Default Interrupt Handler
     TMR2_SetInterruptHandler(TMR2_DefaultInterruptHandler);
 
-    // T2CKPS 1:1; T2OUTPS 1:1; TMR2ON on; 
-    T2CON = 0x04;
+    // T2CKPS 1:4; T2OUTPS 1:1; TMR2ON on; 
+    T2CON = 0x05;
 }
 
 void TMR2_StartTimer(void)
@@ -118,13 +119,20 @@ void TMR2_LoadPeriodRegister(uint8_t periodVal)
 
 void TMR2_ISR(void)
 {
+    static volatile unsigned int CountCallBack = 0;
 
     // clear the TMR2 interrupt flag
     PIR1bits.TMR2IF = 0;
 
-    // ticker function call;
-    // ticker is 1 -> Callback function gets called everytime this ISR executes
+    // callback function - called every 2th pass
+    if (++CountCallBack >= TMR2_INTERRUPT_TICKER_FACTOR)
+    {
+        // ticker function call
     TMR2_CallBack();
+
+    // reset ticker counter
+    CountCallBack = 0;
+}
 }
 
 void TMR2_CallBack(void)
