@@ -130,7 +130,7 @@ void main(void)
     // Cds
     adc_result_t val;
     // 0 - 255
-    int minLimit = 90;
+    int minLimit = 100;
     int maxLimit = 180;
     
     // Delay
