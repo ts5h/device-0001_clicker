@@ -1,12 +1,12 @@
 <config configVersion="1.1" device="PIC16F1705" coreVersion="5.0.2">
    <usedClasses class="java.util.HashMap">
       <entry>
-         <string>ADC</string>
-         <string>class com.microchip.mcc.mcu8.modules.adc.ADC</string>
-      </entry>
-      <entry>
          <string>System Module</string>
          <string>class com.microchip.mcc.mcu8.systemManager.SystemManager</string>
+      </entry>
+      <entry>
+         <string>ADC</string>
+         <string>class com.microchip.mcc.mcu8.modules.adc.ADC</string>
       </entry>
       <entry>
          <string>EUSART</string>
@@ -1175,7 +1175,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM3" name="dutyCycle"/>
-         <value>50.0</value>
+         <value>95.0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC" registerAlias="ADCON1" settingAlias="ADCS" alias="FOSC/4"/>
@@ -1771,7 +1771,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM3" name="ccpr"/>
-         <value>125</value>
+         <value>238</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART" registerAlias="RCSTA" settingAlias="FERR"/>
@@ -1798,12 +1798,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Interrupt Module" name="IVT_NAME"/>
-         <value>IVT1</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG1" settingAlias="CP" alias="OFF"/>
          <value>128</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Interrupt Module" name="IVT_NAME"/>
+         <value>IVT1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="dependentModuleKey"/>
@@ -2599,7 +2599,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM3" name="pwmdc"/>
-         <value>125</value>
+         <value>238</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCAF" settingAlias="IOCAF4" alias="enabled"/>
@@ -2703,7 +2703,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="PWM3" registerAlias="PWMDCL" settingAlias="PWMDCL"/>
-         <value>1</value>
+         <value>2</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM3" name="pwmPeriod"/>
@@ -3143,7 +3143,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="PWM3" registerAlias="PWMDCH" settingAlias="PWMDCH"/>
-         <value>31</value>
+         <value>59</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG1" settingAlias="FOSC" alias="XT"/>
@@ -3219,7 +3219,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="PWM3" registerAlias="PWMDCH"/>
-         <value>31</value>
+         <value>59</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC" registerAlias="ADCON1" settingAlias="ADPREF" alias="FVR"/>
@@ -3435,7 +3435,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="PWM3" registerAlias="PWMDCL"/>
-         <value>64</value>
+         <value>128</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ODCONC" settingAlias="ODC0" alias="enabled"/>
@@ -3848,10 +3848,6 @@
    </tokenMap>
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
-         <file>mcc_generated_files\interrupt_manager.h</file>
-         <hash>2a0eb695653fb1ba64e298a020f01c663faae2ff8628f5a4121c08fa45be5345</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\mcc.h</file>
          <hash>46789af676c90aa892acfeaa6145b26b58f4c6ceb3d81fdcd74deee9c148ab72</hash>
       </entry>
@@ -3860,16 +3856,20 @@
          <hash>8c1f8b10de1e185150e2a5db88b82058ce1744c043e5eb29593d892ebcb183d2</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files\interrupt_manager.h</file>
+         <hash>2a0eb695653fb1ba64e298a020f01c663faae2ff8628f5a4121c08fa45be5345</hash>
+      </entry>
+      <entry>
          <file>main.c</file>
          <hash>9c0bb6d07f9b1c3fdecfe3ff8aa2c724a770ed837d0741216dedc672cc3e7b08</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\tmr2.h</file>
-         <hash>3e27512c923be3dcba6f033b4cc3b6f18fe46579e96f977b0d19dcfdfad6f78f</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\device_config.c</file>
          <hash>54d953b8614606e324c7e1bd8dc1785c60791151df958fb4bf2f18f5cdf8ca06</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\tmr2.h</file>
+         <hash>3e27512c923be3dcba6f033b4cc3b6f18fe46579e96f977b0d19dcfdfad6f78f</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.h</file>
@@ -3901,19 +3901,19 @@
       </entry>
       <entry>
          <file>mcc_generated_files\pwm3.h</file>
-         <hash>13aaea47d4770ad848769e37c1920e8befe1f9c04d47b5a8c374b261ff64e0cf</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\interrupt_manager.c</file>
-         <hash>ff024bd1492d6fffec3d5e3bc5983e7f7f99a6163188d63c3c335a869d3dc179</hash>
+         <hash>d6c09ba17da77f02271ea2b99dffd3d776b47f5980d9865089b1fae9db853045</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.c</file>
          <hash>c55b51b7ca38a20dd6988216e9aba9ea05c2e2f7c95d0bef7034ae9e5ad9a542</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files\interrupt_manager.c</file>
+         <hash>ff024bd1492d6fffec3d5e3bc5983e7f7f99a6163188d63c3c335a869d3dc179</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\pwm3.c</file>
-         <hash>1d6138af11fb491cae2a8ff83dc11a506f470b25dd150227eaa8021d9e7c5097</hash>
+         <hash>860e011c63aeb1ccb3ac5eb8153f90c04a5c59f1006298c775bd89e3f74382d3</hash>
       </entry>
    </generatedFileHashHistoryMap>
    <mc3libFileHashHistoryMap class="java.util.HashMap"/>

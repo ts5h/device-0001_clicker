@@ -146,18 +146,18 @@ void main(void)
     while (1)
     {
         // Add your application code
-        // PWM
-        PWM3_LoadDutyValue(PWM3_INITIALIZE_DUTY_VALUE);
-        delay_ms(clickTime);
-        PWM3_LoadDutyValue(0);
- 
-        // Set Delay
+        // Get Cds Value / Set Delay
         val = ADC_GetConversion(CDS_IN);
         if (val < minLimit) val = (adc_result_t)minLimit;
         if (val > maxLimit) val = (adc_result_t)maxLimit;
         
         delay = (unsigned int)(delayMax + delayMin - map((int)val, minLimit, maxLimit, delayMin, delayMax));
         printf("%d, %d\r\n", val, delay);
+        
+        // PWM
+        PWM3_LoadDutyValue(PWM3_INITIALIZE_DUTY_VALUE);
+        delay_ms(clickTime);
+        PWM3_LoadDutyValue(0);
 
         delay_ms(delay - clickTime);
     }
